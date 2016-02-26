@@ -1,0 +1,13 @@
+<div ng-repeat="info in data" id="{{info.head}}" class="info-div">
+  <h3 class="main-color">{{$index + 1}}. {{info.head}}</h3>
+  <div ng-switch on="type">
+    <div ng-switch-when="terms">
+      <p ng-repeat="p in info.data">
+        <span>{{$parent.$index + 1}}.{{$index + 1}}</span> {{p}}</p>
+      </div>
+      <div ng-switch-when="policy">
+        <p ng-repeat="p in info.data">{{p}}</p>
+      </div>
+    </div>
+
+  </div>

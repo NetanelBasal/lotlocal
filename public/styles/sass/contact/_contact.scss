@@ -1,0 +1,81 @@
+main.contact {
+    .contact-cont {
+        @include container(96%);
+        .wrap-contact {
+            margin-top: 1.2em;
+            @include span(12 of 12);
+            > section:nth-child(1) {
+                @include span(5 of 12);
+                width: 40%;
+            }
+            > section:nth-child(2) {
+                @include span(4 of 12);
+                margin-right: 0;
+                width: 34%;
+            }
+            > section:nth-child(3) {
+                @include span(3 of 12 last);
+            }
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+/*==========  inputs  ==========*/
+
+main.contact .wrap-contact > section:nth-child(1) {
+  min-height: 536px;
+    border-right: 1px solid $second-color;
+    padding-right: 2em;
+    h3.main-color {
+        margin-bottom: 1.2em;
+    }
+    table {
+        width: 100%;
+        border-spacing: 0 20px;
+        border-collapse: separate;
+        margin-top: -20px;
+        textarea {
+            resize: none;
+        }
+        tr:last-child > td:first-child {
+            vertical-align: top;
+        }
+    }
+    a {
+        width: 102px;
+        line-height: 25px;
+        padding: 0;
+        margin-top: 0.7em;
+    }
+}
+
+/*==========  info  ==========*/
+main.contact .wrap-contact > section:nth-child(2) {
+    p {
+        margin-bottom: 0;
+        line-height: 18px;
+    }
+    hr {
+        margin: 10px 0;
+    }
+    table {
+        border-collapse: separate;
+        border-spacing: 19px 3px;
+        margin-left: -19px;
+        margin-top: 1em;
+    }
+}
+
+main.contact .wrap-contact > section:nth-child(3) {
+    .promo {
+        background-color: #e7e5e1;
+        width: 181px;
+        height: 94px;
+        border-radius: 8px;
+        margin: 0 auto;
+        margin-bottom: 1.2em;
+    }
+}

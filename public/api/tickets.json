@@ -1,0 +1,214 @@
+{
+    "data": {
+        "totalItems": 0,
+        "data": [
+            {
+                "id": 1,
+                "status": "Settled",
+                "deliveryDate": "2014-06-27T02:21:07.567",
+                "imageUri": "",
+                "totalWinningAmount": 500,
+                "lines": [
+                    {
+                        "id": 1,
+                        "originalWinningAmount": 300,
+                        "winningAmount": 300,
+                        "prizeCategory": {
+                            "name": "Prize3",
+                            "winningAmount": 300,
+                            "correctNumbers": 2,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "originalWinningAmount": 200,
+                        "winningAmount": 200,
+                        "prizeCategory": {
+                            "name": "Prize2",
+                            "winningAmount": 200,
+                            "correctNumbers": 1,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "originalWinningAmount": 200,
+                        "winningAmount": 200,
+                        "prizeCategory": {
+                            "name": "Prize2",
+                            "winningAmount": 200,
+                            "correctNumbers": 1,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1
+                        ]
+                    }
+                ],
+                "lottery": {
+                    "id": 1,
+                    "name": "MegaMillions",
+                    "currency": "BSD"
+                },
+                "draw": {
+                    "id": 1,
+                    "drawTime": "2014-08-27T02:21:07.567",
+                    "jackpotPrize": 1000000,
+                    "state": "ResultsAvailable",
+                    "winningNumbers": {
+                        "numberResults": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumberResults": [
+                            1
+                        ]
+                    }
+                },
+                "product": {
+                    "id": 1,
+                    "name": "EuroJackpot",
+                    "productType": "lorem ipsum dolor loren ipsum",
+                    "productConfiguration": ""
+                }
+            },
+            {
+                "id": 1,
+                "status": "Pending",
+                "deliveryDate": "2014-08-27T02:21:07.567",
+                "imageUri": "",
+                "totalWinningAmount": 500,
+                "lines": [
+                    {
+                        "id": 1,
+                        "originalWinningAmount": 300,
+                        "winningAmount": 300,
+                        "prizeCategory": {
+                            "name": "Prize3",
+                            "winningAmount": 300,
+                            "correctNumbers": 2,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1,
+                            7
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "originalWinningAmount": 200,
+                        "winningAmount": 200,
+                        "prizeCategory": {
+                            "name": "Prize2",
+                            "winningAmount": 200,
+                            "correctNumbers": 1,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1,
+                            2
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "originalWinningAmount": 200,
+                        "winningAmount": 200,
+                        "prizeCategory": {
+                            "name": "Prize2",
+                            "winningAmount": 200,
+                            "correctNumbers": 1,
+                            "correctSecondaryNumbers": 0
+                        },
+                        "primaryNumbers": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumbers": [
+                            1,
+                            4
+                        ]
+                    }
+                ],
+                "lottery": {
+                    "id": 2,
+                    "name": "EuroMillions",
+                    "currency": "BSD"
+                },
+                "draw": {
+                    "id": 1,
+                    "drawTime": "2014-08-27T02:21:07.567",
+                    "jackpotPrize": 3000000,
+                    "state": "ResultsAvailable",
+                    "winningNumbers": {
+                        "numberResults": [
+                            2,
+                            4,
+                            6,
+                            7,
+                            8
+                        ],
+                        "secondaryNumberResults": [
+                            5,
+                            6
+                        ]
+                    }
+                },
+                "product": {
+                    "id": 1,
+                    "name": "EuroJackpot",
+                    "productType": "lorem ipsum dolor loren ipsum",
+                    "productConfiguration": ""
+                }
+            }
+        ]
+    },
+    "error": null
+}

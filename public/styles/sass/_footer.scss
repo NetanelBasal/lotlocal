@@ -1,0 +1,29 @@
+footer {
+  background: #1b1f1d;
+  color:#fff;
+  margin-top: 1.5em;
+  padding-bottom: 1em;
+  .wrap {
+    @include container(1000px);
+    .inside {
+      @include span(12 of 12);
+    }
+    section:first-child {
+      @include span(3 of 12);
+      i {
+        margin-left: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+    section:last-child {
+      @include span(9 of 12 last);
+      .footer-links {
+        @include span(3 of 12 first);
+        font-size: 13px;
+      }
+      .footer-links:last-child {
+        @include span(3 of 12 last);
+      }
+    }
+  }
+}

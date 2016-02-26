@@ -1,0 +1,122 @@
+
+<div class="sort-info display-table">
+  <div class="table-cell">
+    <select class="form-control input-sm"></select>
+  </div>
+  <div class="table-cell">
+    <select class="form-control input-sm">
+    </select>
+  </div>
+  <div class="table-cell calendar">
+    <i class="fa fa-calendar"></i>
+  </div>
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="From date" date-picker/>
+  </div>
+  <div class="table-cell between-dates">
+    <div>-</div>
+  </div>
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="To date" date-picker/>
+  </div>
+  <div class="table-cell btn-cell">
+    <a class="btn btn-block secondry-btn input-sm">Search</a>
+  </div>
+</div>
+<div class="account-table my-purchases">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+         <th change-arrow ng-click="sort('lottery.name')"><span ng-class="{arrow: setArrowUp('lottery.name'), arrowDown:setArrowDown('lottery.name')}"></span>Product</th>
+         <th change-arrow ng-click="sort('desc')"><span ng-class="{arrow: setArrowUp('desc'), arrowDown:setArrowDown('desc')}"></span>Description</th>
+         <th>Draws/Lines Left</th>
+         <th>Total Lines</th>
+         <th>Shares</th>
+         <th change-arrow ng-click="sort('purchaseDate')"><span ng-class="{arrow: setArrowUp('purchaseDate'), arrowDown:setArrowDown('purchaseDate')}"></span>Start Date</th>
+         <th change-arrow ng-click="sort('totalPayementAmount')"><span ng-class="{arrow: setArrowUp('totalPayementAmount'), arrowDown:setArrowDown('totalPayementAmount')}"></span>Price</th>
+         <th>Payment</th>
+         <th change-arrow ng-click="sort('status')"><span ng-class="{arrow: setArrowUp('status'), arrowDown:setArrowDown('status')}"></span>Status</th>
+       </tr>
+     </thead>
+     <tbody ng-repeat="purchase in purchases | orderBy:predicate:reverse">
+      <tr class="first" toggle-row obg="purchase" ng-class="{'tr-selected': purchase.open}">
+        <td class="text-left">
+          <p>{{purchase.lottery.name}}</p>
+        </td>
+        <td class="text-left">
+          <p>Product {{purchase.lottery.id}} description</p>
+        </td>
+        <td>
+          <p>{{purchase.drawNumbersLeft}} of {{purchase.drawNumbers}}</p>
+        </td>
+        <td>
+          <p>{{purchase.lines.length}}</p>
+        </td>
+        <td>
+          <p>No shares</p>
+        </td>
+        <td>
+          <p>{{purchase.purchaseDate | date: 'd MMM ,y'}}</p>
+        </td>
+        <td>
+          <p>{{purchase.totalPayementAmount}}</p>
+        </td>
+        <td>
+          <p>{{purchase.payment.status}}</p>
+        </td>
+        <td>
+          <p>{{purchase.status}}
+            <a ng-hide="purchase.open"><i class="fa fa-arrow-circle-right toggleRow icon-close third-color"></i></a>
+            <a ng-show="purchase.open"><i class="fa fa-arrow-circle-down toggleRow icon-open third-color"></i></a></p>
+          </td>
+        </tr>
+        <tr class="info">
+          <td colspan="9">
+            <div class="row-toggle">
+              <div class="wrap clearfix">
+                <div class="row">
+                  <header>
+                    <img ng-src="img/logos/{{purchase.lottery.id}}.png" alt="{{purchase.lottery.id}}" class="pull-left">
+                    <p class="pull-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quisquam deleniti eos unde dolor. Dicta corrupti ullam aperiam maiores, neque cum ut. Sapiente neque maxime odio debitis, aliquid, laudantium rem?</p>
+                  </header>
+                </div>
+                <div class="row">
+                  <div class="p-nums">
+                    <ul class="list-unstyled square" ng-repeat="line in purchase.lines">
+                      <li><p>{{letters[$index]}}</p></li>
+                      <li ng-repeat="num in line.primaryNumbers"><p>{{num}}</p></li>
+                      <li class="extra" ng-repeat="num in line.secondaryNumbers"><p>{{num}}</p></li>
+                    </ul>
+                    <p class="pull-right"><img src="img/account/purchase.png" alt="">1 Draws</p>
+                  </div>  <!-- end purchases-nums -->
+                </div>
+                <div class="row">
+                  <hr>
+                </div>
+                <div class="row">
+                  <div class="footer">
+                    <p>Draws left:0/8 <span class="main-color pull-right"><a href="">View all tickets</a></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>  <!-- end tr info -->
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="row">
+    <div class="pagination">
+      <ul class="list-unstyled list-inline">
+        <li><a href=""><span class="main-color"><</span> Previous</a></li>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">Next <span class="main-color">></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

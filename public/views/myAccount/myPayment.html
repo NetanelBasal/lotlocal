@@ -1,0 +1,39 @@
+
+<div class="account-table">
+    <table class="table">
+        <thead>
+          <tr>
+            <th translate="Payment Method"></th>
+            <th translate="Status"></th>
+            <th translate="Default"></th>
+            <th translate="Update"></th>
+            <th translate="Delete"></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="payment in payments" class="first">
+        <td class="text-left">
+          <p>{{payment.type}} ({{payment.number.slice(-4)}})</p>
+      </td>
+      <td>
+        <p>{{payment.status}}</p>
+    </td>
+    <td>
+        <p><i ng-show="payment.isDefault" class="fa fa-check-square tabels-icon-size"></i></p>
+    </td>
+    <td>
+        <p><a data-toggle="modal" ng-click="updatePayment(payment)" ng-show="!payment.isDefault">
+            <i class="fa fa-pencil table-icon main-color tabels-icon-size"></i></a></p>
+        </td>
+        <td>
+            <p><a ng-click="del(payment)" ng-show="!payment.isDefault"><i class="fa fa-trash-o table-icon main-color tabels-icon-size"></i></a></p>
+        </td>
+    </tr>
+</tbody>
+</table>
+<div class="row">
+    <div class="text-right mt">
+        <a class="btn primary-btn" ng-click="addPayment()" translate="Add Payment Method"></a>
+    </div>
+</div>
+</div>

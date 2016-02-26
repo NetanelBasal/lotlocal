@@ -1,0 +1,63 @@
+section.step-one {
+  @include container(85%);
+  header {
+    p.main-color {
+      font-size: 19px;
+    }
+    p:last-child {
+      font-size:15px;
+    }
+  }
+}
+
+section.step-one .lot-boxes {
+  margin-top: 2em;
+  .lot-box {
+    position: relative;
+    margin-right:1em;
+    margin-top: 1em;
+    float:left;
+    width: 174px;
+    height: 211px;
+    border-radius: 8px;
+    background-color: #fff8d2;
+    border: solid 1px $second-color;
+    text-align: center;
+    .cont {
+      @include container(80%);
+    }
+    img {
+      margin-top: 0.2em;
+      width: 85px;
+      height: 83px;
+    }
+    hr {
+      margin: 0.4em 0;
+    }
+    h3 {
+      margin: 0.3em 0;
+    }
+
+    p {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+  img.best-seller-img {
+    position: absolute;
+    top: -16px;
+    left: -12px;
+  }
+  .lot-box.best-seller {
+    background: #fff3af;
+    border: solid 4px $second-color;
+    transform: scale(1.1);
+     p{
+      font-size: 13px;
+     }
+  }
+}
+
+
+

@@ -1,0 +1,114 @@
+.group-one-play {
+  main {
+    @include container(98%);
+    background: $level-one-bg;
+    margin-top: 0.7em;
+    padding:1em;
+    >.wrapper > .row {
+     @include container(98%);
+     >section {
+      @include span(12 of 12);
+      >article {
+        @include span(6 of 12);
+        width:48.15254%;
+        &:last-child {
+          @include span(6 of 12 last);
+          width:50.15254%;
+          margin-top: 2.5em;
+        }
+      }
+    }
+  }
+}
+}
+
+.group-one-play header {
+  margin-top: 1em;
+  p {
+    font-size: 27px;
+    font-family:'robotoblack';
+  }
+}
+.group-one-play section article:first-child {
+  margin-top: 2.5em;
+  >div:first-child {
+    border-bottom:1px solid $second-color;
+    padding-bottom: 1em;
+    width:90%;
+  }
+  >p:first-of-type {
+    margin-top: 1em;
+    i {
+      color: $main-color;
+      font-size: 2em;
+      vertical-align: middle;
+      margin-right: 0.1em;
+    }
+  }
+  >div:last-of-type {
+    margin-top: 1.5em;
+  }
+}
+/*==========  shares draws  ==========*/
+
+.group-one-play .shares-draws {
+  margin-top: 2.5em;
+  article {
+    >p:first-child {
+      font-size: 23.5px;
+    }
+    div i {
+      width: 24px;
+      height: 25px;
+      border-radius: 5px;
+      background-color: $third-color;
+      border: solid 1px #999;
+      color:#fff;
+      font-size: 18px;
+      text-align: center;
+      padding-top: 3px;
+      cursor: pointer;
+    }
+    div span {
+      font-size: 18px;
+      background-color: #fff;
+      box-shadow: inset 1px 2px 5px rgba(0,0,0,.2);
+      border: solid 1px #d1cdc6;
+      width: 29px;
+      height: 29px;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+      margin:0 5px;
+    }
+    div a:last-child {
+      width: 131px;
+      line-height: 25px;
+      border-radius: 5px;
+      background-color: $main-color;
+      border: solid 1px #999;
+      font-size: 15px;
+      padding:0;
+      margin-left: 1em;
+      margin-top: -5px;
+    }
+    &:first-child {
+      margin-bottom: 2em;
+    }
+    &:last-child {
+      >p:first-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+div.play-count {
+  @include span(12 of 12);
+  margin-top: 2em;
+  >div:first-child {
+    margin-bottom: 5px;
+  }
+
+}
+
+

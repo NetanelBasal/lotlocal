@@ -1,0 +1,20 @@
+<div class="wrap-bundles">
+  <div class="bundles-tpl">
+    <ul class="list-unstyled draws-list">
+      <li ng-repeat="bundle in lot.bundles" ng-click="setBundle(bundle)" ng-class="{selectedDraw: bundle.numberOfDraws == $parent.bundle.numberOfDraws, 'best-value': $index == 2}">
+        <p ng-if="$index == 2">Best Value</p>
+        <p class="drawNum">{{bundle.numberOfDraws}}</p>
+        <p class="drawSave main-color">{{bundle.marketingDescription}}</p>
+        <p class="drawPrice">&euro;{{bundle.pricePerDraw}} / Line</p>
+        <input type="radio" ng-model="$parent.bundle.numberOfDraws" ng-value="bundle.numberOfDraws" name="draws" ng-show="false">
+      </li>
+    </ul>
+    <div class="auto-renew">
+      <label>
+        Auto renewal
+      </label>
+      <input type="checkbox" ng-model="lot.bundles[0].allowAutoRenew">
+    </div>
+  </div>
+</div>
+<!-- end wrap-bundles -->

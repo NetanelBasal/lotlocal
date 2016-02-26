@@ -1,0 +1,109 @@
+<div>
+  <div class="top-bg"></div>
+  <div class="row wrap-account">
+    <main class="content-box my-account cart">
+    <div class="line-color"></div>
+    <div class="wrap-cart">
+      <section>
+        <div class="head"><h3>Review your order</h3></div>
+        <h4 ng-if="!cartLen">You dont have items in the cart.</h4>
+        <div class="row">
+          <div class="account-table">
+            <table class="table">
+              <tbody ng-repeat="item in cart.getItemsInCart() track by $index">
+                <tr class="first" toggle-row obg="item" ng-class="{group:item.type == 'groups'}">
+                  <td ng-if="item.type == 'singles' || item.type == 'singleGroup'"><img ng-src="images/lotLogos/{{item.common.id}}.png" alt="{{item.common.name}}"></td>
+                  <td ng-if="item.type == 'groups'"><img ng-repeat="lot in item.lotteries" ng-src="images/lotLogos/{{lot.id}}.png"></td>
+                  <td><p>{{item.common.name}}</p>
+                    <div>
+                      <p ng-if="item.type == 'singles'">{{item.lotLines.length}} lines</p>
+                      <p ng-if="item.type == 'singles' || item.type == 'singleGroup'">{{item.draw.numberOfDraws}} Draws</p>
+                    </div>
+                    <div >
+                      <p ng-if="item.type == 'groups' || item.type == 'singleGroup'">{{item.numShares}} Shares</p>
+                      <p ng-if="item.type == 'groups'">{{item.month}} Draws</p>
+                    </div>
+                  </td>
+                  <td><p>$ {{item.common.price | number:2}}</p></td>
+                  <td>
+                    <p>
+                    <a ng-click="delItem(item, item.type)"><i class="fa fa-trash-o main-color"></i></a>
+                    <a ng-hide="item.open"><i class="fa fa-arrow-circle-right third-color"></i></a>
+                    <a ng-show="item.open"><i class="fa fa-arrow-circle-down third-color"></i></a></p>
+                  </td>
+                </tr>
+                <tr class="info">
+                  <td colspan="4">
+                    <div class="row-toggle">
+                      <div class="wrap clearfix">
+                        <div class="row">
+                          <div class="lot-nums" ng-if="item.type == 'singles'">
+                            <ul class="list-unstyled square" ng-repeat="line in item.lotLines">
+                              <li><p>{{letters[$index]}}</p></li>
+                              <li ng-repeat="num in line.lotLine.nums"><p>{{num}}</p></li>
+                              <li class="extra" ng-repeat="num in line.lotLine.extra"><p>{{num}}</p></li>
+                            </ul>
+                            <p class="draws-img third-color" ng-if="item.lotLines.length > 1"><img src="img/account/purchase.png" alt="draws" ng-style='{"height":item.lotLines.length * 17}'> {{item.draw.numberOfDraws}} Draws</p>
+                            </div>  <!-- end lot-nums -->
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    </tr>  <!-- end tr info -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row" ng-if="cartLen">
+              <div class="total">
+                <p>Total {{getTotal() | number:2}} $</p>
+              </div>
+            </div>
+            <!--  <div class="row mt" ng-if="cartLen">
+              <div class="clear-all">
+                <p class="alert alert-danger"><a  ng-click="delAll()">Clear Cart</a></p>
+              </div>
+            </div> -->
+            </section>  <!-- end cart content -->
+            <div class="row submit-order mt"  ng-if="cartLen && userService.user && userService.user.hasPayment">
+              <div class="payment-methods">
+                <div>
+                  <p>Payment Method <span class="main-color"> *</span></p>
+                </div>
+                <div>
+                  <div class="btn-group" dropdown>
+                    <button type="button" class="btn btn-default btn-block dropdown-toggle">
+                    <span><img ng-src="images/{{payment.type}}.png" alt="">{{payment.number}} </span>
+                    <p><span class="caret"></span></p>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li ng-repeat="payment in payments" ng-click="setPayment(payment)"><img src="images/{{payment.type}}.png" alt="">{{payment.number}}</li>
+                    </ul>
+                  </div>
+                  <a class="link pull-right mt" ng-click="addPayment()">Add payment methods</a>
+                </div>
+              </div>   <!-- end payments method -->
+              <div>
+                <a class="btn secondry-btn" ng-click="submitOrder()">Submit Order</a>
+              </div>
+              </div>   <!-- end submit order -->
+              <div class="row"  ng-if="cartLen && userService.user && !userService.user.hasPayment">
+
+                <div class="pull-right">
+                  <a class="btn secondry-btn" ui-sref="cart.payment">Add Payment Method</a>
+                </div>
+              </div>
+              <div class="row mt" ng-if="paymentRecived">
+                <div class="payment-recived">
+                  <p>Your order has been placed!</p>
+                  <a class="btn primary-btn" ui-sref="account.purchases">Review my orders </a>
+                  <a class="btn primary-btn" ui-sref="playLotteries.Index">Continue playing</a>
+                </div>
+              </div>
+              <section class="cart-views">
+                <div class="ui-view"></div>
+              </section>
+              </div>   <!-- end wrap-cart -->
+              </main>   <!-- end main -->
+            </div>
+          </div>

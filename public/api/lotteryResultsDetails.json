@@ -1,0 +1,19 @@
+
+{
+  "data":
+    {
+      "lottery": {
+        "id": 5,
+        "name": "MEGA MILLIONS",
+        "jackpotAmount": 50000000,
+        "nextDrawTime": 1411419600000,
+        "originCountry": "DZ",
+        "currency": "DOLLAR",
+        "dates" : ["2014-08-27T02:21:07.567", "2014-06-27T02:21:07.567"]
+      }
+ },
+ "error": null
+}
+
+
+

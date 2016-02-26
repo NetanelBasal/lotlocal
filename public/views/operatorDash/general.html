@@ -1,0 +1,39 @@
+<div class="alert alert-danger" ng-if="config.langs.length == 0">
+    You must have at least one <a ui-sref="operatorDash.langs">language</a>
+</div>
+<div ng-hide="config.langs.length == 0">
+    <select class="form-control" ng-model="lang" ng-options="lang.name for lang in config.langs track by lang.id">
+    </select>
+    <h2>Total paid</h2>
+    <div class="col-sm-8">
+        <form name="totalPaidForm">
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="text" class="form-control" ng-model="config.totalPaid.amount">
+            </div>
+            <div class="form-group">
+                <label>Currency</label>
+                <input type="text" class="form-control" ng-model="config.totalPaid.currency" >
+            </div>
+            <div class="form-group">
+                <label>Text (per-language)</label>
+                <div text-angular
+                ng-model="config.totalPaid.txt[lang.id]" ></div>
+            </div>
+        </form>
+        <hr style="border-color:#333;">
+    </div>
+    <div class="col-sm-8">
+        <h2>Why</h2>
+        <form name="whyForm">
+            <div class="form-group">
+                <label>Header</label>
+                <input type="text" class="form-control" ng-model="config.why.header[lang.id]" >
+            </div>
+            <div class="form-group">
+                <label>Text (per-language)</label>
+                <div text-angular ng-model="config.why.txt[lang.id]" ></div>
+            </div>
+        </form>
+    </div>
+</div>

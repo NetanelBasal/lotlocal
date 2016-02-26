@@ -1,0 +1,11 @@
+main, section.editOperator {
+    @include container(600px);
+    margin-top: 3em;
+}
+
+main.contact-list {
+  section {
+    @include container(95%);
+  }
+}
+

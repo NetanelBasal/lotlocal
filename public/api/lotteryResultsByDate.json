@@ -1,0 +1,37 @@
+{
+    "data": {
+        "draw": {
+            "id": 1,
+            "drawTime": "2014-08-27T02:21:07.567",
+            "jackpotPrize": 1000000,
+            "state": "ResultsAvailable",
+            "winningNumbers": {
+                "numberResults": [
+                    44,
+                    5,
+                    17,
+                    24,
+                    28,
+                    9
+                ],
+                "secondaryNumberResults": [
+                    13
+                ]
+            }
+        },
+        "prizeBreakdown": [{
+            "division": "1 Prize",
+            "match": "5+1 Extra No Winner",
+            "payoutPerWinner": "No Winner"
+        }, {
+            "division": "1 Prize",
+            "match": "5+1 Extra No Winner",
+            "payoutPerWinner": "No Winner"
+        }, {
+            "division": "1 Prize",
+            "match": "5+1 Extra No Winner",
+            "payoutPerWinner": "No Winner"
+        }]
+    },
+    "error": null
+}

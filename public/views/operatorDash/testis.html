@@ -1,0 +1,24 @@
+<div class="alert alert-danger" ng-if="config.langs.length == 0">
+    You must have at least one <a ui-sref="operatorDash.langs">language</a>
+</div>
+<div ng-hide="config.langs.length == 0">
+    <select class="form-control" ng-model="lang" ng-options="lang.name for lang in config.langs track by lang.id" name="country">
+    </select>
+    <h2>Testimonals</h2>
+    <div class="col-sm-8">
+        <form name="totalPaidForm">
+            <div ng-repeat="testi in config.testis track by $index">
+                <div class="form-group">
+                    <label>Img Url</label>
+                    <input type="text" class="form-control" ng-model="testi.imgUrl" >
+                </div>
+                <div class="form-group">
+                    <label>Text (per-language)</label>
+                    <div text-angular ng-model="config.testis[$index].txt[lang.id]"></div>
+                </div>
+                 <hr style="border-color:#333;">
+            </div>
+        </form>
+        <a ng-click="addTestis()" class="btn btn-success">Add Testimonal</a>
+    </div>
+</div>

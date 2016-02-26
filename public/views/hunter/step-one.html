@@ -1,0 +1,27 @@
+<section class="step-one">
+  <header>
+     <p class="main-color">Select Lottery</p>
+     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+  </header>   <!-- end header -->
+
+  <div class="row">
+      <div class="lot-boxes" ng-repeat="lot in [1,2,3,4,5,6,7,8]">
+        <div class="lot-box" ng-class="{'best-seller': $index == 2}">
+          <div class="cont">
+             <img src="images/lotLogos/1.png" alt="">
+             <hr>
+             <p>Next Draw:</p>
+             <p>1 day 2 hours 23 min</p>
+             <h3 class="main-color">35,000,000$</h3>
+             <p>Price per line: 2$</p>
+          </div>
+          <img src="images/hunter/best-seller.png" class="best-seller-img" alt="best seller" ng-if="$index == 2">
+        </div>   <!-- end lot box -->
+      </div>
+  </div>
+  <div class="row">
+    <div class="wrap-next">
+      <a class="next-btn secondry-btn" ui-sref="playLotteries.hunter.stepTwo">Next <img src="images/hunter/next.png" alt="jackpotHunter"></a>
+    </div>
+  </div>
+</section>

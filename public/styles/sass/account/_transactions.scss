@@ -1,0 +1,27 @@
+.my-transactions {
+    .row-toggle {
+        .space-left {
+            p {
+            span {
+                display: inline-block;
+                margin-left: 2em;
+            }
+        }
+        }
+
+    }
+
+    table.order-details {
+        td {
+            border-top: 1px solid $second-color;
+            padding: 5px;
+            text-align: left;
+        }
+    }
+
+}
+
+.withdraw {
+    position: relative;
+    top: 5px;
+}

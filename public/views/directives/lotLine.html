@@ -1,0 +1,21 @@
+
+
+    <div class="line-quick-btns">
+        <a ng-click="quickPick()" class="btn primary-btn btn-xs">Quick pick</a>
+        <a ng-click="clearNums()"><i class="fa fa-trash-o"></i></a>
+    </div>
+    <div class="line">
+        <div>
+            <h6>Select {{lotLineConfig.requiredSelectedCount}} Numbers </h6>
+            <ul class="nums list-unstyled">
+                <li ng-repeat="cell in cells" ng-click="userPickNum(cell)" ng-class="{selectedNum: cell.isSelected}">{{cell.num}}</li>
+            </ul>
+        </div>
+        <div ng-show="hasExtra">
+            <h6 class="extra">{{lotLineConfig.secondaryGuessRangeName}}</h6>
+            <ul class="nums list-unstyled extra">
+                <li ng-repeat="cell in extraNumscells" ng-click="userPickExtraNum(cell)" ng-class="{selectedExtraNum: cell.isSelected}">{{cell.num}}</li>
+            </ul>
+        </div>
+    </div>  <!-- end line -->
+

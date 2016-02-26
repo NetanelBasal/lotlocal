@@ -1,0 +1,113 @@
+<main class="main-content">
+    <section>
+        <div id="first-promos-slider">
+            <div class="prev">
+               <img src="images/main-slider/prev.png"  ng-click="prev()">
+            </div>
+
+            <slick infinite="true" slides-to-show="1" slides-to-scroll="1" arrows="false" id="main-promos" style="left:7em;" autoplay="true" speed="1500" autoplay-speed="4000">
+
+                <div ng-repeat="slide in slides">
+                    <a href=""><img ng-src="{{slide}}" class="img-responsive"></a>
+                </div>
+            </slick>
+            <div class="next">
+                <img src="images/main-slider/next.png"  ng-click="next()">
+            </div>
+
+        </div>
+
+        <!-- end first promos slider -->
+        <div id="promos-latest" class="mt" ng-if="false">
+            <div id="promos">
+                <div mb-slider img-width="430" gallery-data="galleryData"></div>
+            </div>
+            <!-- end promos -->
+            <div id="latest">
+                <p translate="Latest News"></p>
+                <table class="table borderless">
+                    <tr ng-repeat="latest in operatorConfig.latest">
+                        <td>{{latest.date}}</td>
+                        <td ng-bind-html="latest.txt[defaultLang]"></td>
+                    </tr>
+                </table>
+            </div>
+            <!-- end latest -->
+        </div>
+        <!-- end promos-latest -->
+
+        <div id="testi" class="mt">
+         <slick infinite="true" slides-to-show="1" slides-to-scroll="1" arrows="false" id="testis-slider"  speed="2000" autoplay-speed="4000" style="margin-bottom:0;">
+
+                <div ng-repeat="testin in operatorConfig.testis">
+                <div class="clearfix">
+                    <section>
+                        <p class="main-color" translate="Testimonials"></p>
+                        <div>
+                            <div ng-bind-html="testin.txt[defaultLang]"></div>
+                        </div>
+                        <!-- <img src="images/testi/shadow.png" class="shadow"> -->
+                    </section>
+                    <section>
+                        <img ng-src="{{testin.imgUrl}}" alt="lotteryClick" class="img-thumbnail img-responsive">
+                        <div class="mt">
+                            <span class="left" ng-click="prevTestis()">&lt;</span>
+                            <span class="right" ng-click="nextTestis()">&gt;</span>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+            </slick>
+
+        </div>
+        <!-- end testi -->
+
+        <div id="why" class="mt">
+
+            <p class="main-color">{{operatorConfig.why.header[defaultLang]}}</p>
+            <p ng-bind-html="operatorConfig.why.txt[defaultLang]"></p>
+        </div>
+        <!-- end why -->
+    </section>
+    <!-- end main section -->
+    <aside>
+        <div class="row" ng-if="userService.user">
+            <div class="home-promo mt" ng-repeat="promo in promos">
+                <a ng-href="{{promo.url}}" target="_blank">
+                    <!--  <p>{{promo.img}}</p> -->
+                    <img ng-src="{{promo.img}}" alt="" class="img-responsive">
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt">
+            <div id="latest">
+                <p translate="Latest News"></p>
+                <!-- <table class="table borderless">
+                    <tr ng-repeat="latest in operatorConfig.latest">
+                        <td>{{latest.date}}</td>
+                        <td ng-bind-html="latest.txt[defaultLang]"></td>
+                    </tr>
+                </table> -->
+                <div ng-repeat="latest in operatorConfig.latest" style="border-bottom: 1px solid #99ccff;">
+                    <p style="font-weight: 500; margin-bottom:2px; padding-top: 4px;">{{latest.date}}</p>
+                    <p ng-bind-html="latest.txt[defaultLang]" style="margin-left: 1em; word-break:break-all;"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" ng-if="false">
+            <div class="total-paid">
+                <div class="head" translate="Total Paid in Prizes"></div>
+                <div class="number main-color">
+                    <span>{{operatorConfig.totalPaid.currency}}</span>
+                    <span>{{operatorConfig.totalPaid.amount | number: 0}}</span>
+                </div>
+                <div ng-bind-html="operatorConfig.totalPaid.txt[defaultLang]"></div>
+            </div>
+        </div>
+
+    </aside>
+    <!-- end aside promos -->
+</main>

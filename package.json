@@ -1,0 +1,30 @@
+{
+  "name": "gulp",
+  "version": "0.0.0",
+  "description": "gulp boilerplate",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "gulp": "~3.8.6",
+    "gulp-autoprefixer": "0.0.7",
+    "gulp-browserify": "~0.5.0",
+    "gulp-connect": "~2.0.5",
+    "gulp-livereload": "^1.5.0",
+    "gulp-ngmin": "~0.3.0",
+    "gulp-ruby-sass": "latest",
+    "gulp-sass": "^1.1.0",
+    "gulp-uglify": "^0.3.0",
+    "gulp-watch": "^0.6.4"
+  },
+  "devDependencies": {
+    "gulp-ng-annotate": "~0.2.0",
+    "gulp-ruby-sass": "^0.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "netanel basal",
+  "license": "ISC"
+}

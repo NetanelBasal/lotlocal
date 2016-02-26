@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="wrap-name">
+        <div>
+            <input type="text" class="form-control" placeholder="First Name *" ng-model="newUser.firstname" required name="firstname">
+            <p class="help-block" ng-show="checkErrors(form.signUpForm.firstname, 'required')">This field required</p>
+        </div>
+        <div>
+            <input type="text" name="lastname" class="form-control" placeholder="Last Name *" ng-model="newUser.lastname" required>
+            <p class="help-block" ng-show="checkErrors(form.signUpForm.lastname, 'required')">This field required</p>
+        </div>
+    </div>
+</div>
+<div class="form-group mt">
+    <div class="input-group">
+        <div class="input-group-addon">
+            <img src="images/envelope.png" alt="login">
+        </div>
+        <input class="form-control" type="email" placeholder="Your Email *" name="email" required class="form-control" ng-model="newUser.email">
+    </div>
+    <p class="help-block" ng-show="checkErrors(form.signUpForm.email, 'required')">This field required</p>
+    <p class="help-block" ng-show="checkErrors(form.signUpForm.email, 'email')">This isnt valid email</p>
+</div>
+<div class="form-group country">
+    <select class="form-control" ng-options="country.nicename for country in countries track by country.iso" ng-model="newUser.country" required name="country">
+        <option value="">Country *</option>
+    </select>
+    <p class="help-block" ng-show="checkErrors(form.signUpForm.country, 'required')">This field required</p>
+</div>
+<div class="row">
+    <div class="wrap-phone">
+        <div>
+            <p>Phone *</p>
+        </div>
+        <div>
+            <input type="text" disabled ng-model="newUser.country.phonecode" class="form-control">
+        </div>
+        <div>
+            <input class="form-control" type="text" ng-model="newUser.area" required name="area"/>
+        </div>
+        <div>
+            <input type="text" class="form-control" ng-model="newUser.phone" required name="phone" ng-pattern="/^[0-9]+$/">
+        </div>
+        <p class="help-block" ng-show="checkErrors(form.signUpForm.phone, 'required')">This field required</p>
+        <p class="help-block" ng-show="checkErrors(form.signUpForm.area, 'required')">This field required</p>
+        <p class="help-block" ng-show="checkErrors(form.signUpForm.phone, 'pattern')">Only Numbers allowed</p>
+    </div>
+</div>
+<div class="row mt">
+    <div class="wrap-pass">
+        <div>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <img src="images/lock.png" alt="login">
+                </div>
+                <input class="form-control password" type="password" placeholder="Choose Password *" name="password" required class="form-control" ng-model="newUser.password" ng-minlength="6">
+            </div>
+            <p class="help-block" ng-show="checkErrors(form.signUpForm.password, 'required')">This field required</p>
+            <p class="help-block" ng-show="checkErrors(form.signUpForm.password, 'minlength')">At least 6 characters</p>
+        </div>
+        <div>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <img src="images/lock.png" alt="login">
+                </div>
+                <input class="form-control" type="password" placeholder="Confirm Password *" name="passwordAgain" required  password-match match="newUser.password" ng-minlength="6" ng-model="confirmPass">
+            </div>
+            <p class="help-block" ng-show="checkErrors(form.signUpForm.passwordAgain, 'mismatch')">Passwords dont match</p>
+        </div>
+        <p class="pass-check" ng-if="!form.signUpForm.passwordAgain.$error.mismatch && form.signUpForm.passwordAgain.$dirty && confirmPass.length > 5">
+            <img src="images/v-img.png" alt="auth">
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="btn-login text-center">
+        <input class="btn primary-btn" type="submit" value="Sign Up">
+    </div>
+</div>

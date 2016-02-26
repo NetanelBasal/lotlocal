@@ -1,0 +1,57 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+    <main class="content-box my-account">
+    <div class="line-color"></div>
+    <div class="row top-latest">
+        <header>
+            <h5 class="main-color">Latest Lottery Results</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi quod perferendis aut esse asperiores! Consequuntur sunt ut obcaecati enim veniam alias autem quod pariatur aliquam quia nesciunt, impedit, aliquid omnis?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad voluptatibus placeat sed voluptatem vitae ratione molestias sapiente rem, ut repellat, dicta doloremque laborum amet accusamus non neque, odio explicabo eius.</p>
+        </header>
+    </div>
+
+    <section class="latest-results">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th change-arrow ng-click="sort('lottery.name')"><span ng-class="{arrow: setArrowUp('lottery.name'), arrowDown:setArrowDown('lottery.name')}"></span> Lottery</th>
+                    <th change-arrow ng-click="sort('lottery.country')">
+                    <span ng-class="{arrow: setArrowUp('lottery.country'), arrowDown:setArrowDown('lottery.country')}"></span> Country</th>
+                    <th class="lastDraw" change-arrow ng-click="sort('lottery.lastDrawDate')"><span ng-class="{arrow: setArrowUp('lottery.lastDrawDate'), arrowDown:setArrowDown('lottery.lastDrawDate')}"></span> Last Draw</th>
+                    <th change-arrow ng-click="sort('lottery.payout')"><span ng-class="{arrow: setArrowUp('lottery.payout'), arrowDown:setArrowDown('lottery.payout')}"></span> Payout</th>
+                    <th>Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="lot in lotteries | orderBy:predicate:reverse">
+                    <td ng-class="{lotLeftFirst: $first, lotBgLeft: !$first}"></td>
+                    <td class="lot-logo" ng-class="{yellowLine: $first}">
+                        <img ng-src="images/lotLogos/{{lot.lottery.id}}.png" alt="" class="logoImg img-circle">
+                        <p><a class="main-color link" ui-sref="latest-results-details({id:lot.lottery.id})">{{lot.lottery.name}}</a></p>
+                    </td>
+                    <td  class="country" ng-class="{yellowLine: $first}">
+                        <img src="images/flag.png" class="pull-left" alt="">
+                        <p>{{lot.lottery.country}}</p>
+                    </td>
+                    <td ng-class="{yellowLine: $first}">
+                        <p>{{lot.lottery.lastDrawDate | date:'MMM d, y' }}</p>
+                    </td>
+                    <td ng-class="{yellowLine: $first}">
+                        <p>{{lot.lottery.payout | numberFilter}}</p>
+                    </td>
+                    <td ng-class="{yellowLine: $first}" class="balls">
+                        <ul class="list-unstyled list-inline balls">
+                            <li ng-repeat="num in lot.lottery.results.nums">
+                                <p>{{num}}</p>
+                            </li>
+                            <li class="extra"><p>{{lot.lottery.results.secondaryNums}}</p></li>
+                        </ul>
+                    </td>
+                    <td ng-class="{lotRightFirst: $first, lotBgRight:!$first}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    </main>
+</div>

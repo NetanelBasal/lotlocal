@@ -1,0 +1,112 @@
+<section class="personal">
+    <form name="userInfoForm">
+        <div class="row">
+            <table class="infoTable">
+                <tr>
+                    <td></td>
+                    <td><p class="bold-field">First Name <label class="main-color">*</label></p></td>
+                    <td><p><input type="text" name="firstname" ng-model="user.firstname" required class="form-control input-sm"></p></td>
+                    <td><p class="bold-field">Last Name <label class="main-color">*</label></p></td>
+                    <td><p><input type="text" name="lastname" ng-model="user.lastname" required class="form-control input-sm"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="envelope"><i class="fa fa-envelope-o"></i></td>
+                    <td><p class="bold-field">Your Email <label class="main-color">*</label></p></td>
+                    <td><input type="email" class="form-control input-sm" ng-model="user.email"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p class="bold-field">Your Birthday</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="2/9/1984" disabled></td>
+                    <td><img src="img/account/gift.png" alt="lotteryClick"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p>Country</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="My country" disabled></td>
+                    <td><p>State</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="USA" disabled></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p>City</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="My city" disabled></td>
+                    <td><p>Address</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="My address" disabled></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p>Zip Code</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="43444" disabled></td>
+                    <td><p>Currency</p></td>
+                    <td><input type="text" class="input-sm form-control" placeholder="EUR" disabled></td>
+                </tr>
+                <tr class="phone">
+                  <td></td>
+                  <td><p>Phone 1 <label class="main-color">*</label></p></td>
+                  <td colspan="2">
+                    <select class="form-control input-sm">
+                        <option value="">972</option>
+                    </select>
+                    <input type="text" class="form-control input-sm" ng-model="user.phoneOne.area" required name="area" ng-pattern="/^[0-9]+$/">
+                    <input id="phone" type="text" class="form-control input-sm" ng-model="user.phoneOne.num" required name="phone" ng-pattern="/^[0-9]+$/" placeholder="required" tooltip-placement="right" tooltip="Notification on large winning will be given by phone cell">
+                </td>
+                <td></td>
+            </tr>
+            <tr class="phone">
+              <td></td>
+              <td><p>Phone 2</p></td>
+              <td colspan="2">
+                <select class="form-control input-sm">
+                    <option value="">972</option>
+                </select>
+                <input type="text" class="form-control input-sm" ng-model="user.phoneTwo.area" name="area" ng-pattern="/^[0-9]+$/">
+                <input id="phone" type="text" class="form-control input-sm" ng-model="user.phoneTwo.num" name="phone" ng-pattern="/^[0-9]+$/">
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div class="row">
+    <div class="change-pass">
+        <p class="main-color"><a ng-click="openChangePass()">Change Password</a></p>
+        <div ng-if="changePass">
+            <button type="button" class="close" ng-click="closeChangePass()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <table class="table borderless">
+                <tr>
+                    <td></td>
+                    <td><span>Old Password <label class="main-color">*</label></span></td>
+                    <td><input type="text" class="input-sm form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><span>New Password <label class="main-color">*</label></span></td>
+                    <td><input id="newPass" type="password" name="newPass" ng-model="user.password" required ng-minlength="6" class="form-control input-sm" placeholder="required"></td>
+                    <td><span>Confirm Password <label class="main-color">*</label></span></td>
+                    <td id="conf-pass">
+                        <input  type="password" name="confirmPassword" ng-model="confirmPassword" required class="form-control input-sm" password-match match="user.password" ng-minlength="6" placeholder="required">
+                        <div ng-if="!userInfoForm.confirmPassword.$error.mismatch && userInfoForm.confirmPassword.$dirty && confirmPassword.length > 5">
+                           <img src="images/v-img.png" alt="auth">
+                       </div>
+                   </td>
+               </tr>
+           </table>
+           <div class="row error-pass">
+            <div class="help-block" ng-show="userInfoForm.confirmPassword.$dirty && userInfoForm.confirmPassword.$error.mismatch">
+                Passwords dont match
+            </div>
+        </div>
+    </div>
+</div>  <!-- end change-pass -->
+</div>
+<div class="row">
+    <div class="save pull-right">
+        <a class="btn secondry-btn" ng-disabled="userInfoForm.$invalid || userInfoForm.$pristine">Save Changes</a>
+    </div>
+</div>  <!-- end save btn -->
+</form>
+</section>

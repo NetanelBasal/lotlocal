@@ -1,0 +1,37 @@
+.promos-dash {
+  @include container(1000px);
+  margin-top: 2em;
+  .wrap {
+    @include span(8 of 12 last);
+  }
+}
+
+.promos-dash.all-promos {
+  .wrap {
+    @include span(12 of 12);
+    padding:1em;
+    article {
+      @include span(12 of 12);
+      .promo-desc {
+        position: relative;
+        float:left;
+        margin-right: 0.7em;
+        .control-promo {
+          position: absolute;
+          top:0;
+        }
+      }
+    }
+    div.promos-loc {
+      @include container(40%);
+      .promoLoc {
+        position: relative;
+        .locImg {
+          position: absolute;
+          width:250px;
+        }
+      }
+
+    }
+  }
+}

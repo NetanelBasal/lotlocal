@@ -1,0 +1,63 @@
+<div class="row" ng-if="false">
+    <section class="hunter">
+        <div class="banner">
+            <div class="wrapper">
+                <section>
+                    <p class="main-color">Hunt the big Ones!</p>
+                    <p class="main-color">LotteryClicks jackpot hunter buys you tickets</p>
+                    <p class="main-color">only when the jackpot is big enough for you!</p>
+                    <p>Choose which jackpot thrills you, and the amount of lines you want to buy.</p>
+                </section>
+                <!-- end banner content -->
+                <section>
+                    <img src="images/hunter/banner.png" alt="JackpotHunter">
+                </section>
+                <!-- end banner img -->
+            </div>
+            <!-- end wrapper -->
+        </div>
+        <!-- end banner -->
+        <div class="row">
+            <section class="wrap-content">
+                <div class="circles clearfix">
+                    <a ui-sref=".stepOne" ui-sref-active="wrap-circle">
+                        <div class="circle-out">
+                            <div class="circle">
+                                <p>1</p>
+                                <p>Select Lottery</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a ui-sref=".stepTwo" ui-sref-active="wrap-circle">
+                        <div class="circle-out">
+                            <div class="circle">
+                                <p>2</p>
+                                <p>Hunt your Jackpot!
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a ui-sref=".stepThree" ui-sref-active="wrap-circle">
+                        <div class="circle-out">
+                            <div class="circle">
+                                <p>3</p>
+                                <p>Define hunting period</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="wrap-content-inside clearfix">
+                    <div class="line-color"></div>
+                    <div class="content">
+                        <div class="ui-view hunter-anim"></div>
+                    </div>
+                    <!-- end content -->
+                </div>
+            </section>
+            <!-- end content wrapper -->
+        </div>
+    </section>
+    <!-- end hunter -->
+</div>
+
+<h1 class="text-center mt">Not Implemented yet</h1>

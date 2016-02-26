@@ -1,0 +1,128 @@
+<div class="row">
+  <section class="group">
+    <div class="banner">
+      <div class="wrapper">
+        <h4 class="main-color">Play GroupLotto and MAXIMIZE your chances to win.</h4>
+        <p>We've created the  GroupLotto from the biggest Jackpots in the world. To bring you this exiting way to play</p>
+        <div class="display-table">
+          <div class="table-cell">
+           <h3 class="main-color">Join GroupLotto</h3>
+           <p><img src="images/group/pepole.png" alt="GroupLotto"></p>
+         </div>
+
+         <div class="table-cell plus">
+          <i class="fa fa-plus fa-3x"></i>
+        </div>
+
+        <div class="table-cell">
+          <h3 class="main-color">Maximum tickets every week</h3>
+          <p><img src="images/group/tickets.png" alt="tickets"></p>
+        </div>
+
+        <div class="table-cell equal">
+          <p>=</p>
+        </div>
+
+        <div class="table-cell">
+          <h3 class="main-color">Maximum chances to win</h3>
+          <p><img src="images/group/win-man.png" alt="win-chances"></p>
+        </div>
+
+      </div> <!-- end display table -->
+    </div>  <!-- end wrapper -->
+  </div><!-- end banner -->
+
+  <div class="row">
+    <div class="wrap-pkgs clearfix">
+      <div class="packs">
+       <div class="row">
+         <div class="pack" ng-repeat="pack in packs" ng-class="{greyBg: pack.addToCart}">
+           <div class="head-line" ng-style="{'background':pack.color}"></div>
+           <img ng-src="images/group/pkg/{{pack.id}}.png" alt="pkg" class="pkg-logo">
+
+           <div class="first-show toggleCartAnimation" ng-if="!pack.addToCart"  ng-class="{leave: pack.leave}">
+            <div class="pkg-lot clearfix" ng-repeat="lot in pack.lotteries" ng-style="{'border-color':pack.color}">
+              <img src="images/lotLogos/{{lot.id}}.png" alt="logo" class="img-circle pull-left">
+              <div class="pull-left">
+                <p ng-repeat="line in lot.txt">{{line}}</p>
+              </div>
+            </div><!-- end package lot -->
+            <div class="chance">
+              <p>{{pack.chances}}<span> CHANCES TO WIN</span></p>
+            </div>
+
+            <div class="price">
+              <p class="main-color">{{pack.price}}$ <span>A Month</span></p>
+            </div>
+
+            <div class="play-now">
+              <a class="btn secondry-btn btn-block" ng-click="closeOthers(pack)">PLAY NOW!</a>
+            </div>
+          </div>  <!-- end first show -->
+
+          <div class="sec-show toggleCartAnimation" ng-if="pack.addToCart">
+
+            <div class="wrap-add-to-cart">
+              <button type="button" class="close" ng-click="toggleCart(pack)"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <p class="main-color how-many">How many shares would you like to own?</p>
+
+              <p class="shares">
+                <a ng-click="toggleNumShares(-1 ,pack)"><i class="fa fa-minus"></i></a>
+                <span>{{pack.numShares}}</span>
+                <a ng-click="toggleNumShares(1 ,pack)"><i class="fa fa-plus"></i></a>
+              </p>
+
+              <p class="main-color">How many draws would you like to play?</p>
+              <form name="groupForm">
+                <div class="radio" ng-repeat="month in pack.monthOpts">
+                  <label>
+                    <input type="radio" name="shares" ng-model="$parent.month" ng-value="month" ng-change="changeMonth(month, pack)">
+                    {{month}} Month
+                  </label>
+                </div>
+              </form>  <!-- end form -->
+            </div><!-- end wrap-add-to-cart -->
+
+            <div class="price-cart">
+              <strong>Price: </strong><span class="main-color">US$ {{calcPrice(pack) | number: 2}}</span>
+            </div>
+
+            <div class="add-to-cart-btn">
+              <a class="btn primary-btn btn-block" ng-click="addToCart(pack)">Add to Cart</a>
+            </div>
+          </div>  <!-- end sec show -->
+
+          <div class="shape-bottom" ng-hide="pack.addToCart">
+            <img src="images/group/pkg-bottom.png" alt="lotteryClick">
+          </div>
+          <div class="shape-bottom" ng-if="pack.addToCart">
+            <img src="images/group/pkg-bottom-grey.png" alt="lotteryClick">
+          </div>
+
+        </div><!-- end pack -->
+      </div>
+    </div>  <!-- end packs -->
+  </div>  <!-- end wrap-pkgs -->
+</div>  <!-- end row packs -->
+<div class="row">
+  <div class="cont-group-info">
+    <section class="group-info">
+      <article>
+        <div ng-include="'views/directives/accordion.html'"></div>
+      </article>   <!-- end accordion -->
+      <article>
+        <h3 class="main-color">Improve your odds with a GROUP</h3>
+        <div>
+          <ul class="list-unstyled">
+            <li><img src="images/v-img.png" alt="group play info"> In the last 12 months, Over 95% of members have had a won!</li>
+            <li><img src="images/v-img.png" alt="group play info"> Playing GroupLotto lets you play the world's biggest lotteries with the best chance of hitting the Jackpot</li>
+            <li><img src="images/v-img.png" alt="group play info"> The combined jackpot could reach more than 600 Million each week</li>
+            <li><img src="images/v-img.png" alt="group play info"> 1 in 4 jackpots is won by a Group</li>
+          </ul>
+        </div>
+      </article>   <!-- end improve odds -->
+    </section>
+  </div>   <!-- end info -->
+</section><!-- end group -->
+</div>   <!-- end cont-info -->
+</div>

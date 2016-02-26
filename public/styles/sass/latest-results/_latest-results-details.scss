@@ -1,0 +1,129 @@
+.latests-results-details {
+    hr {
+        margin: 0;
+        &:first-of-type {
+            margin-top: -20px;
+        }
+    }
+    .wrapper {
+        padding-left: 2em;
+        @include span(12 of 12);
+    }
+    section:first-child {
+        @include span(9 of 12);
+        > div.btn-wrap {
+            position: relative;
+            top: -40px;
+            left: 25px;
+        }
+    }
+    section:last-child {
+        @include span(3 of 12 last);
+    }
+}
+
+/*==========  header  ==========*/
+.latests-results-details section:first-child header {
+
+    article {
+        margin-top: 1em;
+        padding: 1em 2em;
+        border: 3px solid $main-color;
+        background: url(../../images/latest-results.png);
+        @include span(12 of 12);
+        >div >h3:first-of-type {
+          margin-bottom: 0;
+        }
+        > div:first-child {
+            @include span(8 of 12);
+            p.main-color {
+                font-weight: bold;
+            }
+        }
+        > div:last-child {
+            @include span(4 of 12 last);
+            margin-top: 2em;
+        }
+    }
+    p:nth-of-type(1) {
+        font-size: 13px;
+    }
+    p.main-color {
+        font-size: 30px;
+    }
+}
+
+/*==========  win nums  ==========*/
+
+.latests-results-details .win-nums {
+    @include span(12 of 12);
+    padding-bottom: 1em;
+    > div:first-of-type {
+        @include span(3 of 12);
+    }
+    > div:last-of-type {
+        @include span(6 of 12);
+        margin-top: 3px;
+    }
+    ul.balls {
+        margin-bottom: 0;
+        li {
+          border-radius: 13.5px;
+          width: 27px;
+          line-height: 27px;
+          padding:0;
+          height: auto;
+          p {
+            font-size: 18px;
+          }
+        }
+    }
+    .main-color {
+        padding-bottom: 0.5em;
+    }
+}
+
+/*==========  prize breakdown  ==========*/
+.latests-results-details .prize-breakdown {
+    @include span(12 of 12);
+    .main-color {
+      margin-bottom: 0;
+    }
+    .account-table {
+        @include span(8 of 12);
+        padding-top: 1em;
+        padding-bottom: 1em;
+        table tr {
+            border-bottom: 1px solid $second-color;
+        }
+        table tbody tr:last-child {
+            border: none;
+        }
+        table td {
+            padding: 10px;
+        }
+    }
+}
+
+/*==========  last-info  ==========*/
+.latests-results-details .last-info {
+  p {
+    font-size: 13px;
+    margin-bottom: 2em;
+  }
+}
+
+
+.latests-results-details .bottom-info {
+    p:nth-child(odd) {
+        margin-bottom: 0;
+        color:$main-color;
+        margin-bottom: 6px;
+        font-size: 18px;
+    }
+}
+
+.change-nums-anim.ng-enter {
+  animation: bounceIn 0.7s;
+}
+

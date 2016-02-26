@@ -1,0 +1,178 @@
+{
+    "data": [{
+        "lottery": {
+            "id": 1,
+            "name": "Italian Superenalotto",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1411419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+    {
+        "lottery": {
+            "id": 2,
+            "name": "La Primitiva",
+            "country": "Usa",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1411419200000,
+            "payout": "5430429747",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+    {
+        "lottery": {
+            "id": 3,
+            "name": "Euro Millions",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1411419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+    {
+        "lottery": {
+            "id": 4,
+            "name": "Euro Jackpot",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1412429800000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+    {
+        "lottery": {
+            "id": 5,
+            "name": "Mega Millions",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1410419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+    {
+        "lottery": {
+            "id": 6,
+            "name": "UK National Lotto",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+     {
+        "lottery": {
+            "id": 7,
+            "name": "PowerBall",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+     {
+        "lottery": {
+            "id": 8,
+            "name": "El Gordo De La Primitiva",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+     {
+        "lottery": {
+            "id": 9,
+            "name": "UK Euro Millions",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+     {
+        "lottery": {
+            "id": 10,
+            "name": "NY Lotto",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    },
+     {
+        "lottery": {
+            "id": 11,
+            "name": "BonoLoto",
+            "country": "Spain",
+            "jackpotAmount": 50000000,
+            "lastDrawDate": 1413419600000,
+            "payout": "RollOver",
+            "originCountry": "UK",
+            "currency": "DOLLAR",
+            "results": {
+                "nums": [3, 7, 8, 11, 31, 6],
+                "secondaryNums": 44
+            }
+        }
+    }]
+}

@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<!-- <script src=[[asset('vendor/lodash.min.js')]]></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+<!-- <script src=[[asset('vendor/angular-ui-router/release/angular-ui-router.min.js')]]></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+<link rel="stylesheet" href=[[asset('vendor/date-picker/jquery-ui.min.css')]]>
+<script src=[[asset('vendor/date-picker/jquery-ui.min.js')]]></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular-sanitize.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js'></script>
+<script src=[[asset('vendor/angular-webstorage/angular-webstorage.min.js')]]></script>
+<script src=[[asset('vendor/dd.min.js')]]></script>
+<script src=[[asset('vendor/fancybox/jquery.fancybox.pack.js')]]></script>
+<script src=[[asset('vendor/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js')]]></script>
+<script src=[[asset('vendor/danialfarid-angular-file-upload/dist/angular-file-upload.min.js')]]></script>
+<script src=[[asset('vendor/sticky.js')]]></script>
+<script src=[[asset('vendor/slick-carousel/slick/slick.min.js')]]></script>
+<script src=[[asset('vendor/angular-slick/dist/slick.min.js')]]></script>
+<script src=[[asset('vendor/angular-timer.min.js')]]></script>
+<script src=[[asset('vendor/angular-translate.min.js')]]></script>
+<script src=[[asset('min-js/main.js')]]></script>

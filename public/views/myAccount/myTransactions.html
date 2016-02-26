@@ -1,0 +1,118 @@
+<div class="sort-info display-table">
+  <div class="table-cell">
+    <select ng-model="transType" class="form-control input-sm">
+      <option value="">Transactions type</option>
+      <option value="Win">Win</option>
+      <option value="Purchase">Purchase</option>
+      <option value="Deposit">Deposit</option>
+      <option value="Bonus Received">Bonus Received</option>
+      <option value="Bonus Used">Bonus Used</option>
+    </select>
+  </div>
+  <div class="table-cell">
+    <select class="form-control input-sm" ng-model="product" ng-options="lottery.name for lottery in lotteries track by lottery.name">
+    <option value="">Product Type</option>
+    </select>
+  </div>
+  <div class="table-cell calendar">
+    <i class="fa fa-calendar"></i>
+  </div>
+
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="From date" date-picker/>
+  </div>
+  <div class="table-cell between-dates">
+    <div>-</div>
+  </div>
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="To date" date-picker/>
+  </div>
+  <div class="table-cell btn-cell">
+    <a class="btn btn-block secondry-btn input-sm">Search</a>
+  </div>
+</div>   <!-- end sort info -->
+<div class="row">
+  <div class="withdraw">
+    <a class="main-color link" show-modal="withdraw">Withdraw</a>
+  </div>
+</div>
+<div class="text-center mt" ng-if="!(transactions|filter:transType).length">
+  <h3>No available records matching the filter parameters.</h3>
+</div>
+<div class="account-table my-transactions" ng-if="(transactions|filter:transType).length">
+  <table class="table">
+    <thead>
+      <tr>
+        <th change-arrow ng-click="sort('type')"><span ng-class="{arrow: setArrowUp('type'), arrowDown:setArrowDown('type')}"></span><label translate="Transaction"></label></th>
+        <th change-arrow ng-click="sort('id')"><span ng-class="{arrow: setArrowUp('id'), arrowDown:setArrowDown('id')}"></span><label translate="ID"></label></th>
+        <th change-arrow ng-click="sort('at')"><span ng-class="{arrow: setArrowUp('at'), arrowDown:setArrowDown('at')}"></span><label translate="Time & Date"></label></th>
+        <th change-arrow ng-click="sort('amount')"><span ng-class="{arrow: setArrowUp('amount'), arrowDown:setArrowDown('amount')}"></span><label translate="Amount"></label></th>
+        <th change-arrow ng-click="sort('productName')"><span ng-class="{arrow: setArrowUp('productName'), arrowDown:setArrowDown('productName')}"></span><label translate="Lottery"></label></th>
+        <th change-arrow ng-click="sort('productTypeName')"><span ng-class="{arrow: setArrowUp('productTypeName'), arrowDown:setArrowDown('productTypeName')}"></span><label translate="Product"></label></th>
+        <th change-arrow ng-click="sort('paymentMethodName')"><span ng-class="{arrow: setArrowUp('paymentMethodName'), arrowDown:setArrowDown('paymentMethodName')}"></span><label translate="Method"></label></th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="transaction in transactions  | orderBy:predicate:reverse | filter: transType">
+      <tr class="first" toggle-row obg="transaction" ng-class="{'tr-selected': transaction.open && openRowIf(transaction)}">
+        <td>
+          <p>{{transaction.type}}</p>
+        </td>
+        <td>
+          <p>{{transaction.type}}</p>
+        </td>
+        <td>
+          <p>{{transaction.at | date:'d MMM ,y h:mm a'}}</p>
+        </td>
+        <td>
+          <p>${{transaction.amount}}</p>
+        </td>
+        <td>
+          <p>{{transaction.productName | transactions}}</p>
+        </td>
+        <td>
+          <p>{{transaction.productTypeName | transactions}}</p>
+        </td>
+        <td>
+          <p>{{transaction.paymentMethodName | transactions}}
+          <span ng-if="openRowIf(transaction)">
+          <a  ng-hide="transaction.open"><i class="fa fa-arrow-circle-right toggleRow icon-close third-color"></i></a>
+          <a ng-show="transaction.open"><i class="fa fa-arrow-circle-down toggleRow icon-open third-color"></i></a>
+          </span>
+            </p>
+        </td>
+      </tr>
+       <tr class="info" ng-if="openRowIf(transaction)">
+          <td colspan="7">
+            <div class="row-toggle" ng-class="{'open-row-if-count-one': transactions.length == 1}">
+              <div class="clearfix" ng-class="{wrap: !!transaction.ticket}" ng-switch on="transaction.type">
+                <div ng-switch-when="Purchase">
+                  <div ng-include="'views/myAccount/transactions/purchase.html'" ng-class="{'space-left': transaction.type == 'Purchase'}"></div>
+                </div>
+                <div ng-switch-when="Deposit">
+                  <div ng-include="'views/myAccount/transactions/deposit.html'" ng-class="{'space-left': transaction.type == 'Deposit'}"></div>
+                </div>
+                <div ng-switch-when="Win">
+                  <div ticket-info ticket="transaction.ticket" letters="letters"></div>
+                </div>
+              </div><!-- end switch on -->
+            </div>
+          </td>
+        </tr>  <!-- end tr info -->
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="pagination">
+      <ul class="list-unstyled list-inline">
+        <li><a href=""><span class="main-color"><</span> Previous</a></li>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">Next <span class="main-color">></span></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+<div ng-include="'views/myAccount/withdraw.html'"></div>

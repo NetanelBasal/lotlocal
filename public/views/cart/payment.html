@@ -1,0 +1,218 @@
+<div class="row"  ng-if="userService.user && !paymentRecived">
+
+    <form name="form.paymentForm">
+        <div class="wrap-payment-personal clearfix">
+            <div class="row">
+                <h3 class="main-color">Personal Information</h3>
+                <div class="birthday">
+                    <div>Your Birthday</div>
+                    <div>
+                        <input type="text" class="form-control" date-picker birthday="true" ng-model="user.birthday">
+                    </div>
+                    <p>
+                        <img src="images/vip.png" alt="birthday">
+                    </p>
+                </div>
+                <table class="table borderless">
+                    <tr>
+                        <td>Country
+                            <span class="main-color">*</span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" ng-model="user.country" name="country" disabled>
+                        </td>
+                        <td ng-if="user.country.countryCode == 'US'">State
+                            <span class="main-color">*</span>
+                        </td>
+                        <td ng-if="user.country.countryCode == 'US'">
+                            <select class="form-control" ng-model="newUser.state" ng-options="state.name for state in states track by state.code" required name="state">
+                                <option value="">Select State *</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p ng-if="user.country.countryCode == 'US'" class="help-block" ng-show="checkErrors(form.paymentForm.state, 'required')">This field required</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City
+                            <span class="main-color">*</span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" ng-model="user.city" name="city" required>
+                        </td>
+                        <td>Address
+                            <span class="main-color">*</span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" ng-model="user.address" name="address" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="help-block" ng-show="checkErrors(form.paymentForm.city, 'required')">This field required</p>
+                        </td>
+                        <td colspan="2">
+                            <p class="help-block" ng-show="checkErrors(form.paymentForm.address, 'required')">This field required</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code
+                            <span class="main-color">*</span>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" ng-model="user.zipcode" name="zipcode" required ng-pattern="/^[0-9]+$/">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="help-block" ng-show="checkErrors(form.paymentForm.zipcode, 'required')">This field required</p>
+                        </td>
+                        <td colspan="2">
+                            <p class="help-block" ng-show="checkErrors(form.paymentForm.zipcode, 'required')">Only Numbers Allowed</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="wrap-payment clearfix">
+                    <h3 class="main-color">Payment Information</h3>
+                    <section>
+                        <div class="field">
+                            <div>
+                                <p>Payment Method
+                                    <span class="main-color">*</span>
+                                </p>
+                            </div>
+                            <div>
+                                <select class="form-control" ng-model="user.card.type" drop-down name="method" required>
+                                    <option value="">Payment Method</option>
+                                    <option value="Visa" data-image="images/Visa.png">Visa Card</option>
+                                    <option value="MasterCard" data-image="images/MasterCard.png">Master Card</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.method, 'required')">This field required</p>
+                        <div class="field mt">
+                            <div>
+                                <p>Card Number
+                                    <span class="main-color">*</span>
+                                </p>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" ng-model="user.card.num" name="num" ng-pattern="/^[0-9]+$/" required>
+                            </div>
+                        </div>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.num, 'required')">This field required</p>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.num, 'pattern')">Only Numbers Allowed</p>
+                        <div class="field exp-date mt">
+                            <div>
+                                <p>Expiration Date
+                                    <span class="main-color">*</span>
+                                </p>
+                            </div>
+                            <div>
+                                <select class="form-control" ng-model="user.card.month" ng-options="month for month in expiration.month track by month">
+                                </select>
+                            </div>
+                            <div>
+                                <select class="form-control" ng-model="user.card.year" ng-options="year for year in expiration.year track by year">
+                                </select>
+                            </div>
+                            <div>CVV/CVC2
+                                <span class="main-color">*</span>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" ng-model="user.card.cvv" tooltip-placement="right" tooltip="Your 3 or 4 digit security code on the back of your card" name="cvv" required ng-pattern="/^[0-9]+$/">
+                            </div>
+                        </div>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.cvv, 'required')">This field required</p>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.cvv, 'pattern')">Only Numbers Allowed</p>
+                        <div class="field mt">
+                            <div>
+                                <p>Card Owner Name
+                                    <span class="main-color">*</span>
+                                </p>
+                            </div>
+                            <div>
+                                <input type="text" class="form-control" ng-model="user.card.holderName" required name="name" ng-pattern="/^[^0-9]+$/">
+                            </div>
+                        </div>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.name, 'required')">This field required</p>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.name, 'pattern')">Only letters allowed</p>
+                    </section>
+                    <!-- end left section -->
+                    <section>
+                        <p>By checking the checkboxes, I confirm that i have read and understood</p>
+                        <div class="special-checkbox">
+                            <input type='checkbox' id="terms" ng-disabled="!termsClicked" required ng-model="terms" name="terms">
+                            <label for="terms"></label><a class="link main-color" show-modal="termsModal" ng-click="termsClicked = true">Terms and Conditions</a>
+                        </div>
+                        <div class="special-checkbox">
+                            <input type='checkbox' id="policy" ng-disabled="!privacyClicked" ng-model="privacy" required name="policy">
+                            <label for="policy"></label><a class="link main-color" show-modal="privacyModal" ng-click="privacyClicked = true">Privacy Policy</a>
+                        </div>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.terms, 'required')">Please Read and Check the Terms of Use</p>
+                        <p class="help-block" ng-show="checkErrors(form.paymentForm.policy, 'required')">Please Read and Check the Privacy Policy</p>
+                        <div class="submit-order">
+                            <a class="btn secondry-btn" ng-click="addPayment()">Submit Order</a>
+                        </div>
+                    </section>
+                </div>
+                <!-- end wrap-payment -->
+
+            </form>
+        </div>
+    </div>
+    <!-- end wrap-payment-personal -->
+</div>
+<div class="row mt" ng-if="paymentRecived">
+    <div class="payment-recived">
+        <p>Your order has been placed!</p>
+        <a class="btn primary-btn" ui-sref="account.purchases">Review my orders </a>
+        <a class="btn primary-btn" ui-sref="playLotteries.Index">Continue playing</a>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="termsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title main-color">Terms and Conditions</h4>
+            </div>
+            <div class="modal-body scroll-modal">
+              <div>
+                <p>
+                    THE FOLLOWING IS A LEGALLY BINDING AGREEMENT (THE "AGREEMENT") BETWEEN [ENTER NAME] (THE "COMPANY"), AND YOURSELF. PLEASE READ CAREFULLY AND MAKE SURE YOU FULLY UNDERSTAND THE CONTENTS OF THIS AGREEMENT PRIOR TO THE USE OF THE WEBSITE AND/OR SERVICES. IF YOU HAVE ANY DOUBTS ABOUT ANY OF YOUR RIGHTS AND OBLIGATIONS RESULTING FROM ENTERING INTO THIS AGREEMENT, PLEASE CONSULT LEGAL COUNSEL. BY CLICKING ON “SUBMIT” OR “I AGREE” AND/OR BY USING THE SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ AND AGREED, IN FREE WILL AND CONSENT, TO BE BOUND BY THE TERMS OF THIS AGREEMENT WITHOUT ANY RESERVATIONS. YOU ALSO AGREE TO THE USE OF ELECTRONIC COMMUNICATIONS IN ORDER TO ENTER INTO CONTRACTS, AND YOU WAIVE ANY RIGHTS OR REQUIREMENTS UNDER APPLICABLE LAWS IN ANY JURISDICTION WHICH REQUIRE AN ORIGINAL (NON-ELECTRONIC) SIGNATURE. IF YOU DO NOT AGREE WITH ANY OF THE TERMS OF THIS AGREEMENT, DO NOT CONTINUE TO USE THE WEBSITE AND/OR SERVICES.
+
+                </p>
+            </div>
+
+            <div show-info data="data" type="terms"></div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div class="modal fade" id="privacyModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title main-color">Privacy Policy</h4>
+            </div>
+            <div class="modal-body scroll-modal">
+                <article>
+                 <div show-info data="data" type="policy"></div>
+             </article>
+         </div>
+     </div>
+     <!-- /.modal-content -->
+ </div>
+ <!-- /.modal-dialog -->
+</div>

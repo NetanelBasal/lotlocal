@@ -1,0 +1,17 @@
+.dashboard {
+  @include container(1000px);
+  border: 1px solid #999;
+  padding:1em;
+  margin-top: 2em;
+  .nav-tabs {
+    li {
+      margin-left: 1em;
+      cursor: pointer;
+      padding:0.4em 1em;
+    }
+    .tabActive {
+      border:1px solid $second-color;
+      @include border-top-radius(5px);
+    }
+  }
+}

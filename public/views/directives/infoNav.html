@@ -1,0 +1,5 @@
+<div class="info-nav">
+  <ul>
+    <li ng-repeat="info in data" ng-class="{'info-active': isActive(info)}"><a ng-click="scrollTo(info.head)" scroll-to>{{info.head}}</a>
+    </ul>
+  </div>

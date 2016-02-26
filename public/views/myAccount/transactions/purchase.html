@@ -1,0 +1,13 @@
+<h3 class="main-color">Order details:</h3>
+<p>Order number: {{transaction.order.num}} <span>Payment methods: {{transaction.order.payment.type}}: {{transaction.order.payment.num}}</span>
+</p>
+<table class="table order-details">
+    <tr ng-repeat="item in transaction.order.items | filter: {productName: product.name} ">
+        <td>{{item.item}}</td>
+        <td>{{item.productName}}</td>
+        <td>{{item.amount}}</td>
+        <td>Auto renewal {{item.autoRenew}}</td>
+        <td><a class="link" ui-sref="account.single-purchase({id: item.id})">View order</a>
+        </td>
+    </tr>
+</table>

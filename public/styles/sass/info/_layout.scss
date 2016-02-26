@@ -1,0 +1,50 @@
+main.info {
+  section {
+    @include span(12 of 12);
+    padding:1em 2em;
+    > aside {
+      @include span(3 of 12);
+    }
+    > article {
+      @include span(9 of 12 last);
+    }
+  }
+}
+
+/*==========  aside  ==========*/
+main.info section > aside {
+  div:first-child {
+    margin-bottom: 1em;
+  }
+  div:last-child {
+    position: relative;
+    max-width: 224px;
+  }
+  div:last-child > ul {
+    list-style-type: decimal;
+    padding-left: 0;
+    width:100%;
+    list-style-position:inside;
+    li {
+      border-bottom:1px solid $second-color;
+      border-top:1px solid $second-color;
+      padding:0.3em 0;
+    }
+  }
+}
+/*==========  content  ==========*/
+main.info section > article {
+  >h3 {
+    background: $even-th-bg;
+    border-radius: 8px;
+    padding:0.5em;
+  }
+  .info-div {
+    p {
+      text-align: justify;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+}

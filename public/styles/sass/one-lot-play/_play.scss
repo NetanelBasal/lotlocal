@@ -1,0 +1,237 @@
+.top-bg-one-play {
+    height: 18.75em;
+}
+
+header.one-play {
+    @include container(1000px);
+    color: #fff;
+    padding-top: 1em;
+    .logo {
+        img {
+            width: 100px;
+        }
+    }
+    .name {
+        p {
+            font-size: 22px;
+        }
+    }
+    .price {
+        font-size: 44px;
+        text-shadow: -1px -1px 0 rgba(black, 0.6), 1px -1px 0 rgba(black, 0.6), -1px 1px 0 rgba(black, 0.6), 1px 1px 0 rgba(black, 0.6), 16px 9px 5px rgba(0, 0, 0, 0.14);
+        font-weight: bold;
+    }
+    .time {
+        vertical-align: bottom;
+        ul li {
+            text-align: center;
+            font-size: 26px;
+            display: inline-block;
+            width: 38px;
+            height: 41px;
+            .time-left {
+                line-height: 34px;
+                width: 40px;
+                background: $main-color;
+                line-height: 35px;
+                font-size: 26px;
+                @include breakpoint($tablet) {
+                    font-size: em(14);
+                    width: 20px;
+                    line-height: 17px;
+                }
+            }
+            .type {
+                padding-top: 3px;
+                font-size: 14px;
+                color: #000;
+                @include breakpoint($tablet) {
+                    font-size: em(10);
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    @include container(98%);
+}
+
+/*==========  WIN O METER  ==========*/
+.meter {
+    @include span(12 of 12);
+    border-top: 4px dotted $main-color;
+    border-bottom: 4px dotted $main-color;
+    .display-table .table-cell:first-child {
+        width: 20%;
+        text-align: center;
+        p {
+            font-size: em(22);
+            margin-bottom: 0;
+        }
+    }
+    .display-table .table-cell:last-child {
+        width: 80%;
+        .progress {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/*==========  Lines  ==========*/
+.wrap-lines {
+    @include span(12 of 12);
+    background: #f4f2f0;
+    padding-top: 3.6em;
+    padding-bottom: 1em;
+    .lines {
+        @include container(98%);
+        background: #fff;
+        border-radius: em(8);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    }
+    .wrap-inside {
+        @include span(12 of 12);
+        margin-top: -3em;
+        background: #FFF;
+    }
+}
+
+/*==========  all btns  ==========*/
+.wrap-lines .all-btns {
+    float: right;
+    position: relative;
+    top: -3em;
+    right: 3em;
+    width: 10em;
+    @include border-top-radius(em(8));
+    text-align: center;
+    background: #fff;
+    padding: 0.8em;
+    padding-bottom: 0;
+    i {
+        font-size: 2.1em;
+        color: $main-color;
+        vertical-align: bottom;
+        cursor: pointer;
+    }
+}
+
+/*==========  More lines  ==========*/
+.more-lines {
+    background: #FFF;
+    float: right;
+    width: 8em;
+    top: -1em;
+    left: -1em;
+    text-align: center;
+    padding: 5px 0;
+    right: 1em;
+    position: relative;
+    @include border-bottom-radius(em(8));
+}
+
+/*==========  Line quick btns  ==========*/
+.line-quick-btns {
+    float: right;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    display: none;
+    i {
+        color: $main-color;
+        font-size: 1.5em;
+        vertical-align: top;
+        cursor: pointer;
+    }
+}
+
+.wrap-line {
+    background: #FFF;
+    float: left;
+    width: 180px;
+    border: 1px solid transparent;
+    margin-left: 0.6em;
+    &:hover {
+        position: relative;
+        z-index: 100;
+        border-color: $main-color;
+        border-radius: 5px;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.75);
+        .line-quick-btns {
+            display: block;
+        }
+    }
+}
+
+/*==========  Line  ==========*/
+
+.wrap-lines .lines .line {
+    padding-top: 2em;
+    h6 {
+        width: 12em;
+        background: $second-color;
+        border-radius: 9px 8px 8px 9px/8px 8px 9px 9px;
+        margin: 0 auto;
+        padding: 6px 10px;
+        position: relative;
+        top: 0.6em;
+        font-size: 12px;
+        text-align: center;
+    }
+    ul.nums {
+        @include border-top-radius(6px);
+        margin-left: 0;
+        width: 100%;
+        margin-bottom: 0;
+        background: #f4f2f0;
+        padding-top: 1em;
+        padding-bottom: 2em;
+        padding-left: 0.4em;
+        li {
+            display: inline-block;
+            font-size: 0.75em;
+            line-height: 18px;
+            padding: 0px;
+            border: 1px solid #A1A0A0;
+            height: 20px;
+            width: 20px;
+            margin: 0.1em;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+    ul.extra {
+        @include border-bottom-radius(7px);
+        background: #d4e6f4;
+        padding-top: 2em;
+        padding-bottom: 0.4em;
+        position: relative;
+        top: -2.7em;
+    }
+    h6.extra {
+        top: -1.7em;
+        z-index: 1;
+    }
+}
+
+.selectedNum, .selectedExtraNum  {
+    background: url(../../images/chosen.png) no-repeat 2px;
+}
+
+.wrap-bundles-count-play {
+    @include container(98%);
+}
+
+.bundles {
+    @include span(6 of 12);
+    margin-top: 1.5em;
+    .auto-renew {
+        margin-right: 1em;
+    }
+}
+
+.count-play {
+    @include span(6 of 12 last);
+}

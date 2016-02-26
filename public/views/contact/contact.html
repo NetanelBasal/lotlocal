@@ -1,0 +1,132 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+    <main class="content-box my-account contact">
+        <div class="line-color"></div>
+        <div class="contact-cont">
+            <div class="wrap-contact">
+                <section>
+                    <form name="contactForm">
+                        <h3 class="main-color">Contact Us</h3>
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" name="firstname" required ng-model="user.firstname" placeholder="First Name *">
+                        </div>
+                        <p class="help-block" ng-if="checkErrors(contactForm.firstname, 'required')">This field is required</p>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <img src="images/envelope.png" alt="login">
+                                </div>
+                                <input type="email" class="form-control" name="email" required ng-model="user.email" placeholder="Your Email *">
+                            </div>
+                        </div>
+                        <p class="help-block" ng-if="checkErrors(contactForm.email, 'required')">This field is required</p>
+                        <p class="help-block" ng-if="checkErrors(contactForm.email, 'email')">This isnt valid email</p>
+                        <table>
+                            <tr>
+                                <td>Topic
+                                    <span class="main-color">*</span>
+                                </td>
+                                <td>
+                                    <select name="topic" class="form-control" ng-model="user.topic" required>
+                                        <option value="">Topic</option>
+                                        <option value="payment">Payment</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <p class="help-block" ng-if="checkErrors(contactForm.topic, 'required')">This field is required</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Subject
+                                    <span class="main-color">*</span>
+                                </td>
+                                <td>
+                                    <select name="subject" ng-model="user.subject" class="form-control" required>
+                                        <option value="">Subject</option>
+                                        <option value="promotions">Promotions</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <p class="help-block" ng-if="checkErrors(contactForm.subject, 'required')">This field is required</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Message
+                                    <span class="main-color">*</span>
+                                </td>
+                                <td>
+                                    <textarea name="message" cols="30" rows="11" class="form-control" ng-model="user.message" required placeholder="Your Message"></textarea>
+                                    <p class="help-block" ng-if="checkErrors(contactForm.message, 'required')">This field is required</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="alert alert-success" ng-if="saved">
+                            <p>Thanks, We will be in touch Soon!</p>
+                        </div>
+                        <div ng-if="!saved">
+                            <a ng-click="sendMessage()" class="btn secondry-btn pull-right">Send</a>
+                        </div>
+                    </form>
+                </section>
+                <!-- end inputs -->
+
+                <section>
+                    <h3 class="main-color">Live Chat</h3>
+                    <p>Live Chat our friendly and professional customer</p>
+                    <p>support.</p>
+                    <p>Team offers Live Chat assistance in 13 languages.</p>
+                    <hr>
+                    <h3 class="main-color">Our Toll Free Numbers</h3>
+                    <p>Call us any day of the week with your inquiry at +44 20 3150 0476 for telephone support</p>
+                    <p>Send us a fax at +44 20 7691 7234</p>
+                    <p>or call one of our toll-free lines below:</p>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>UK</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                            <tr>
+                                <td>Russia</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                            <tr>
+                                <td>Australia</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                            <tr>
+                                <td>Canada</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                            <tr>
+                                <td>South Africa</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                            <tr>
+                                <td>Ukraine</td>
+                                <td>0800-1700-409</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- end table phones -->
+                    <hr>
+                    <h3 class="main-color">Mail</h3>
+                    <p>Mail our team of lottery experts is prepared to provide a quick and thorough response to all questions and comments via email in 13 languages.</p>
+                    <p>Just <a class="link">sign-in</a> or <a class="link">sign-up</a>, fill in the required fields below, and receive lottery help straight to your on-site mailbox in less than 24 hours.</p>
+                </section>
+                <!-- end info -->
+
+                <section>
+                    <!-- <div class="promo"></div>
+                    <div class="promo mt"></div>
+                    <div class="promo mt"></div>
+                    <div class="promo mt"></div>
+                    <div class="promo mt"></div> -->
+                </section>
+                <!-- end promos -->
+
+            </div>
+            <!-- end wrapper -->
+        </div>
+        <!-- end container -->
+    </main>
+</div>

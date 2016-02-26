@@ -1,0 +1,7 @@
+<div class="clearfix" ng-show="lastPage > 1">
+    <ul class="pager pull-right">
+        <li style="padding-right:5px;">Page {{currentPage}}/{{lastPage}}</li>
+        <li ng-class="{disabled: isFirst()}"><a ng-click="prevPage()"><i class="fa fa-backward"></i></a></li>
+        <li ng-class="{disabled: isLast()}"><a ng-click="nextPage()"><i class="fa fa-forward"></i></a></li>
+    </ul>
+</div>

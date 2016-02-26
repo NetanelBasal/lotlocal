@@ -1,0 +1,21 @@
+{
+    "data": [{
+                "id": 2001,
+                "type": "Visa",
+                "expiration": "12-2015",
+                "cvv": "988",
+                "holderName": "Muki Ben David",
+                "status" : "Active",
+                "isDefault" : true
+              },
+{
+                "id": 2002,
+                "type": "MasterCard",
+                "expiration": "03-2014",
+                "cvv": "911",
+                "holderName": "Puki Bala",
+                "status" : "Inactive",
+                "isDefault" : false
+              }]
+}
+

@@ -1,0 +1,113 @@
+/*==========  banner  ==========*/
+.hunter .wrap-content-inside {
+    position: relative;
+    top: -5em;
+}
+
+.hunter .banner {
+    padding-bottom: 1em;
+    .wrapper {
+        @include container(85%);
+        section:first-child {
+            @include span(9 of 12);
+            p:first-child {
+                font-size: 52px;
+                font-weight: bold;
+            }
+            p:nth-child(2), p:nth-child(3) {
+                font-size: 24px;
+            }
+            p:nth-child(2) {
+                margin-bottom: 0;
+            }
+            p:last-child {
+                font-size: 14px;
+            }
+        }
+        section:last-child {
+            @include span(3 of 12 last);
+            text-align: center;
+        }
+    }
+}
+
+/*==========  content box  ==========*/
+.hunter .wrap-content {
+    @include container(97%);
+    margin-top: 2em;
+    .line-color {
+        height: 0.7em;
+    }
+    .content {
+        min-height: 769px;
+        padding-top: 5em;
+        @include span(12 of 12);
+        background: $level-two-bg;
+        position: relative;
+        padding-bottom: 3em;
+    }
+    .circles {
+        text-align: center;
+    }
+    .circle-out {
+        z-index: 1;
+        margin-right: 1em;
+        display: inline-block;
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 77.5px;
+        background-color: #fff;
+        border: 1px solid;
+        border-color: #f26a25;
+    }
+    .circle {
+        width: 111px;
+        height: 111px;
+        border-radius: 72.5px;
+        background-color: #f26a25;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        text-align: center;
+        color: #fff;
+        padding-top: 1em;
+        p {
+            margin-bottom: 0;
+            &:first-child {
+                font-size: 30px;
+                font-weight: bold;
+            }
+            &:last-child {
+                font-size: 15px;
+            }
+        }
+    }
+    .wrap-circle > .circle-out {
+        width: 155px;
+        height: 155px;
+    }
+    .wrap-circle > .circle-out > .circle {
+        width: 145px;
+        height: 145px;
+        padding-top: 30px;
+        left: 3px;
+        p:last-child {
+          width: 143px;
+        }
+    }
+}
+/*==========  wrap next btn  ==========*/
+
+.wrap-next {
+    float: right;
+    margin-right: 5em;
+    margin-top: 2.5em;
+}
+
+.hunter-anim.ng-leave {
+    animation: fadeOutRight 0.5s;
+}
+.hunter-anim.ng-enter {
+    animation: fadeInLeft 0.5s;
+}

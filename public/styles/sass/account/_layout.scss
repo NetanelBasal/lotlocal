@@ -1,0 +1,137 @@
+.wrap-account {
+  padding-top: 4em;
+}
+.my-account {
+    .wrap-content {
+        @include span(12 of 12);
+        article {
+            @include span(9 of 12);
+        }
+        aside {
+            @include span(last 3 of 12);
+        }
+        article, aside {
+            @include breakpoint($tablet) {
+                @include span(12 of 12);
+            }
+        }
+    }
+    #level-one, #level-two, #level-three {
+        @include container(98%);
+        background: $level-one-bg;
+        min-height: 400px;
+    }
+    #level-one {
+        padding: 1em;
+    }
+    #level-two {
+        background: $level-two-bg;
+        padding: 1em 0;
+        min-height: 580px;
+    }
+    #level-three {
+        background: $level-two-bg;
+        @include border-top-radius(em(8));
+    }
+    .tabs {
+        @include breakpoint($tablet) {
+            display: none;
+        }
+
+        @include container(98%);
+        ul {
+            margin: 0 0 0 1px;
+            border-bottom: 7px solid $second-color;
+        }
+        li {
+            background: #d1cecc;
+            cursor: pointer;
+            font-size: 12px;
+            line-height: 30px;
+            max-height: 30px;
+            @include border-top-radius(em(8));
+            &:hover img {
+             transform: translateY(-5px);
+         }
+         img {
+          transition:all 0.4s;
+          margin-right: em(5);
+      }
+      &:nth-child(1) {
+        margin-left: 10px;
+    }
+}
+}
+.tabs-tablet {
+    display: none;
+    @include breakpoint($tablet) {
+        display: block;
+    }
+
+    @include container(98%);
+    .slide-nav {
+        display: none;
+    }
+    ul {
+        margin-bottom: 0;
+    }
+    li, p {
+        padding: 0.5em;
+        text-align: center;
+        background: #333;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+    }
+    p {
+        margin-bottom: 0;
+        background: darken($second-color, 10%);
+        cursor: pointer;
+    }
+}
+.sort-info {
+    background: $second-color;
+    padding: em(5);
+    @include border-top-radius(em(8));
+    @include border-bottom-radius(em(8));
+    .calendar {
+        text-align: center;
+        color: $main-color;
+        width: 2%;
+    }
+    .date-cell {
+        width: 15%;
+        font-size: em(10);
+    }
+    .btn-cell {
+        width: 20%;
+        a {
+            line-height: 1em;
+        }
+    }
+    .between-dates {
+        width:5px;
+    }
+}
+.table {
+  margin-bottom: 0.3em;
+}
+.pagination {
+  text-align: center;
+  @include span(12 of 12);
+}
+}
+
+li.account-tab-active {
+    background: $second-color !important;
+    color:#fff;
+}
+
+.tr-selected {
+    td:nth-child(odd) {
+        background: $odd-td-bg-hover !important;
+    }
+    td:nth-child(even) {
+        background: $even-td-bg-hover !important;
+    }
+}

@@ -1,0 +1,59 @@
+<h4 class="text-center">Balance</h4>
+<section class="top">
+  <table class="table borderless">
+    <tr>
+      <td>Real Money</td>
+      <td>{{balance.realMoney | number:2}} &euro;</td>
+    </tr>
+    <tr>
+      <td>Bonus Money</td>
+      <td>{{balance.bonusMoney | number:2}} &euro;</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>{{balance.realMoney + balance.bonusMoney | number:2}} &euro;</td>
+    </tr>
+  </table>
+  <img src="img/account/balance-shadow.png" alt="lotteryClick">
+  </section><!-- end top section -->
+  <div class="deposit-btn mt">
+    <a class="btn primary-btn btn-block" ng-click="openDeposite()">Deposit</a>
+  </div>
+  <section class="vip-points mt">
+    <h5 class="text-center">My VIP Points</h5>
+    <div class="row">
+      <div class="progress-container">
+        <div class="wrap">
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-warning play-progress"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{balance.vip[0].points / 10}}%">
+                </div>
+          </div>
+          <div class="gift">
+            <img src="img/account/gift.png"  alt="vip-points">
+            <p>{{balance.vip[0].points}}</p>
+          </div>
+        </div>
+      </div><!-- end progress-container-->
+      </div>
+    <hr>
+    <div>
+      <table>
+        <tr>
+          <td>Discount:</td>
+          <td>{{balance.vip[0].discount}}%</td>
+        </tr>
+        <tr>
+          <td>Points left until next level:</td>
+          <td>{{balance.vip[0].pointsLeft}}</td>
+        </tr>
+        <tr>
+          <td>Gold level Discount:</td>
+          <td>{{balance.vip[0].goldDiscount}}%</td>
+        </tr>
+      </table>
+    </div>
+    <img src="images/vip-shadow.png" alt="lotteryClick">
+    </section><!-- end vip points -->
+<!-- 
+    <div class="promo-balance mt"></div>
+    <div class="promo-balance mt"></div> -->

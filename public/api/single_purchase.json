@@ -1,0 +1,73 @@
+{
+    "data": {
+        "id": 1,
+        "status": "Pending",
+        "purchaseDate": "2014-02-26T14:23:32.187",
+        "playerId": 1,
+        "orderId": 1,
+        "autoRenew": false,
+        "totalPayementAmount": 120.36,
+        "payment": {
+            "id": 1,
+            "status": "Unknown"
+        },
+        "drawNumbers": 8,
+        "drawNumbersLeft": 0,
+        "lottery": {
+            "id": 1,
+            "name": "MegaMillions",
+            "currency": "BSD",
+            "country": ["Albania", "Algeria"]
+        },
+        "draw": {
+            "drawTime": "2014-08-27T02:57:57.413",
+            "jackpotPrize": 100,
+            "timeUntilDraw": "5d 7h 25m 37s"
+        },
+        "bundle": {
+            "bundleId": 1,
+            "product": {
+                "id": 1,
+                "name": "Product1",
+                "version": 635446597115844033
+            }
+        },
+        "lines": [{
+            "primaryNumbers": [
+                2,
+                4,
+                6,
+                22,
+                25,
+                26
+            ],
+            "secondaryNumbers": [
+                1
+            ]
+        }, {
+            "primaryNumbers": [
+                2,
+                4,
+                6,
+                22,
+                25,
+                26
+            ],
+            "secondaryNumbers": [
+                6
+            ]
+        }, {
+            "primaryNumbers": [
+                2,
+                4,
+                6,
+                22,
+                25,
+                26
+            ],
+            "secondaryNumbers": [
+                1
+            ]
+        }]
+    }
+}

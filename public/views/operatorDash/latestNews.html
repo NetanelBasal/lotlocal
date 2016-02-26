@@ -1,0 +1,24 @@
+<div class="alert alert-danger" ng-if="config.langs.length == 0">
+    You must have at least one <a ui-sref="operatorDash.langs">language</a>
+</div>
+<div ng-hide="config.langs.length == 0">
+    <select class="form-control" ng-model="lang" ng-options="lang.name for lang in config.langs track by lang.id">
+    </select>
+    <div class="col-sm-8">
+        <h2>Latest News</h2>
+        <form name="latestNewsForm">
+            <div ng-repeat="news in config.latest track by $index">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="text" class="form-control" ng-model="config.latest[$index].date" date-picker >
+                </div>
+                <div class="form-group">
+                    <label>Text (per-language)</label>
+                    <input type="text" class="form-control" ng-model="config.latest[$index].txt[lang.id]" >
+                </div>
+                <hr style="border-color:#333;">
+            </div>
+        </form>
+        <a ng-click="addNews()" class="btn btn-success">Add news</a>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="wrap-controls">
+    <img src="images/left.png" class="control-btn left" data-dir="left" ng-click="prev()">
+    <img src="images/right.png" class="control-btn right" data-dir="right" ng-click="next()">
+    <div class="slider clearfix">
+        <div class="wrapSlider" data-num-boxes-to-show="6">
+            <div class="sliderBox" data-ng-repeat="lot in lotteries">
+                <a ui-sref="one-lot-play.Personal({lotName: lot.name})"><img ng-src="images/lotLogos/{{lot.lottery.id}}.png" class="img-circle"></a>
+                <div class="price">
+
+                    <span>{{lot.lottery.currencySymbol}}</span>{{lot.lottery.jackpotAmount | number:0}}
+                    <p data-timer data-end-time="lot.lottery.nextDrawDate" class="time-left">{{ddays}}d {{hhours}}:{{mminutes}}:{{sseconds}}</p>
+                </div>
+
+                <a class="btn btn-success btn-sm secondry-btn" ui-sref="one-lot-play.Personal({lotName: lot.name})" translate="Play Now"></a>
+            </div>
+
+       </div> 
+         <!--  <slick infinite="true" slides-to-show="6" slides-to-scroll="1" arrows="false" id="lot-list" speed="1000" autoplay-speed="3000">
+
+                 <div class="sliderBox" data-ng-repeat="lot in lotteries">
+                <a ui-sref="one-lot-play.Personal({lotName: lot.name})"><img ng-src="images/lotLogos/{{lot.lottery.id}}.png" class="img-circle"></a>
+                <div class="price">
+
+                    <span>{{lot.lottery.currencySymbol}}</span>{{lot.lottery.jackpotAmount | number:0}}
+                    <p data-timer data-end-time="lot.lottery.nextDrawDate" class="time-left">{{ddays}}d {{hhours}}:{{mminutes}}:{{sseconds}}</p>
+                </div>
+
+                <a class="btn btn-success btn-sm secondry-btn" ui-sref="one-lot-play.Personal({lotName: lot.name})" translate="Play Now"></a>
+            </div>
+            </slick>
+        -->
+    </div>
+</div>

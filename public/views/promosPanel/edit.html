@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top:30px;">
+        <div class="col-sm-8 col-sm-push-2">
+            <div class="col-sm-6 col-sm-push-3">
+                <h1 style="margin:20px 0;" ng-show="userService.isAdmin()">Update Operator</h1>
+                <form>
+                    <div class="form-group" ng-show="userService.isAdmin()">
+                        <label>Name:</label>
+                        <input type="text" class="form-control" ng-model="operator.name">
+                    </div>
+                    <div class="form-group" ng-show="userService.isAdmin()">
+                        <label>Domain:</label>
+                        <input type="text" class="form-control" ng-model="operator.domain">
+                    </div>
+                        <h4>Promos:</h4>
+                        <hr>
+                        <div ng-repeat="promo in operator.promos">
+                            <div class="form-group">
+                                <label>Promo{{$index + 1}} Img:</label>
+                                <input type="text" class="form-control" ng-model="promo.img">
+                            </div>
+                            <div class="form-group">
+                                <label>Promo{{$index + 1}} Url:</label>
+                                <input type="text" class="form-control" ng-model="promo.url">
+                            </div>
+                            <div class="form-group">
+                                <label>Promo{{$index + 1}} Location:</label>
+                                <select class="form-control" ng-model="promo.loc">
+                                    <option value="Home">Home</option>
+                                    <option value="About">About</option>
+                                </select>
+                            </div>
+                            <hr style="border-color:#000;">
+                        </div>
+
+                    <p ng-show="operatorUpdated">Operator Updated Succesfully!</p>
+                    <p ng-show="operatorFailed">There was a Problem!</p>
+                    <a ng-click="updatePromos()" class="btn btn-success">Update</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

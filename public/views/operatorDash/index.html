@@ -1,0 +1,30 @@
+<section class="dashboard">
+ <div class="row" style="margin-top:30px;" ng-hide="config.langs.length == 0">
+    <div class="col-sm-8">
+        <a ng-click="saveSettings()" class="btn btn-info pull-right" ng-disabled="config.langs.length == 0">Save Settings <i class="fa fa-floppy-o"></i></a>
+    </div>
+</div>
+<div class="row" style="margin-top:30px;">
+    <div class="col-sm-8" ng-if="saved">
+        <div class="alert alert-success">Settings saved successfully!</div>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <ul class="list-unstyled nav nav-tabs">
+            <li ui-sref=".langs" ui-sref-active="tabActive"><span>Langs</span></li>
+            <li ui-sref=".general" ui-sref-active="tabActive"><span>General</span></li>
+            <li ui-sref=".testis" ui-sref-active="tabActive"><span ></span>Testimonials</li>
+            <li ui-sref=".latestNews" ui-sref-active="tabActive"><span>Latest News</span></li>
+            <li ui-sref=".products" ui-sref-active="tabActive"><span>Products</span></li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="ui-view operatorDash"></div>
+</div>
+<div class="row">
+    <a ng-click="saveSettings()" class="btn btn-info pull-right" ng-disabled="config.langs.length == 0">Save Settings <i class="fa fa-floppy-o"></i></a>
+</div>
+</div>
+</section>

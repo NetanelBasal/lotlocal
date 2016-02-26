@@ -1,0 +1,22 @@
+<div class="top-bg"></div>
+<div class="row tabs-wrap">
+  <div class="play-tabs">
+    <ul class="list-inline list-unstyled">
+      <li ui-sref-active="play-tab-active" ui-sref=".Index"><a>Play lotteries</a></li>
+      <li ui-sref-active="play-tab-active" ui-sref=".Group"><a>Group play</a></li>
+      <li ui-sref=".hunter.stepOne" ng-class="{'play-tab-active':$state.includes('playLotteries.hunter.stepTwo') || $state.includes('playLotteries.hunter.stepOne') || $state.includes('playLotteries.hunter.stepThree')}"><a>Jackpot Hunter</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <main class="content-box play-lotteries">
+
+    <div class="line-color"></div>
+
+    <div class="ui-view"></div>
+
+
+
+  </main>
+</div>

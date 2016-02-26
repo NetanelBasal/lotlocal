@@ -1,0 +1,79 @@
+.personal {
+    background: $level-one-bg;
+    @include span(12 of 12);
+    .row {
+        padding-left: 1em;
+    }
+    table.infoTable {
+        padding-top: 10px;
+        border-collapse: separate;
+        border-spacing: 15px 17px;
+        width: 98%;
+        margin-left: -15px;
+        td p {
+            margin-bottom: 0;
+        }
+        td.envelope {
+            vertical-align: top;
+            i {
+                position: relative;
+                top: 2px;
+                left: 9px;
+            }
+        }
+        tr.phone td {
+            > * {
+                display: inline-block;
+            }
+            select:first-child {
+                width: 75px;
+                margin-right: 7px;
+            }
+            input[type=text]:nth-child(2) {
+                width: 80px;
+                margin-right: 7px;
+            }
+            input[type=text]:nth-child(3) {
+                max-width: 100px;
+            }
+        }
+    }
+    .change-pass {
+        @include span(12 of 12);
+        p {
+            font-size: 1.2em;
+            margin: 1em;
+            margin-left: 1.55em;
+        }
+        .close {
+            margin-right: 0.5em;
+        }
+        table.table {
+            width:auto;
+        }
+        table tr td {
+            vertical-align: bottom;
+        }
+        td#conf-pass {
+            position: relative;
+            > div {
+                position: absolute;
+                top: 10px;
+                right: -15px;
+            }
+        }
+        .error-pass > div {
+            text-align: right;
+            margin-right: 53px;
+        }
+    }
+    .save {
+        margin-right: 1em;
+        padding-bottom: 1em;
+    }
+    input {
+        @include placeholder {
+            color: $body-color;
+        }
+    }
+}

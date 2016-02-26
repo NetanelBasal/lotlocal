@@ -1,0 +1,12 @@
+<section class="login sign-up-modal">
+    <button type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+    </button>
+    <form name="form.signUpForm" ng-submit="registerUser()" novalidate>
+        <fieldset>
+            <legend>Sign Up</legend>
+            <div ng-include="'views/auth/signUp.html'"></div>
+        </fieldset>
+    </form>
+</section>

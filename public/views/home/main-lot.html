@@ -1,0 +1,28 @@
+<div class="main-lot">
+    <header>
+      <div class="row">
+        <div class="logo"><img ng-src="images/lotLogos/{{mainLot.lottery.id}}.png" class="img-responsive"/></div>
+        <div class="price">
+            <p class="text-price">THIS TUESDAY'S EUROMILLIONS JACKPOT IS A MASSIVE</p>
+            <p class="num-price">
+            <!-- <span ng-bind-html="mainLot.lottery.currency | moneyType"></span> -->
+             {{mainLot.lottery.currencySymbol}}{{mainLot.lottery.jackpotAmount | number:0}}</p>
+        </div>
+      </div>
+
+  <div class="row">
+      <div class="draw-time">
+            <p>Time until draw closes:</p>
+         <ul class="list-unstyled list-inline main-lot-time-style" timer end-time="mainLot.lottery.nextDrawDate">
+              <li class="animated bounceIn"><div class="time-left">{{ddays}}</div><div class="type">Days</div></li>
+              <li class="animated fadeInRight"><div class="time-left">{{hhours}}</div><div class="type">Houres</div></li>
+              <li class="animated fadeInLeft"><div class="time-left">{{mminutes}}</div><div class="type">Minutes</div></li>
+              <li class="animated fadeInUp"><div class="time-left">{{sseconds}}</div><div class="type">Seconds</div></li>
+            </ul>
+<a class="btn primary-btn btn-block btn-main-lot" ui-sref="one-lot-play.Personal({lotName: mainLot.name})">&gt;&gt;&gt; PLAY NOW</a>
+        </div>
+  </div>
+
+
+    </header><!-- end header -->
+</div>

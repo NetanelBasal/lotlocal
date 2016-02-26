@@ -1,0 +1,116 @@
+.balance {
+    min-height: 620px;
+    position: relative;
+    background: url(../../images/body-bg.png), #96cffa;
+    border-radius: em(8);
+    padding-bottom: 1em;
+    z-index: 10;
+    section.top {
+        @include container(90%);
+        position: relative;
+        z-index: 1;
+        border: 1px solid #fff;
+        border-radius: em(8);
+        img {
+            position: absolute;
+            top: 60%;
+            left: em(12);
+            z-index: -10;
+        }
+        table {
+            margin-bottom: 0;
+            color: #fff;
+            tr {
+                background: #4d6a80;
+            }
+            tr:last-child td:first-child {
+                border-bottom-left-radius: 8px;
+            }
+            tr:last-child td:last-child {
+                border-bottom-right-radius: 8px;
+            }
+            tr:first-child td:nth-child(2) {
+                border-top-right-radius: 8px;
+            }
+            tr:first-child td:first-child {
+                border-top-left-radius: 8px;
+            }
+            tr:nth-child(1), tr:nth-child(2) {
+                border-bottom: 1px solid #fff;
+            }
+            tr:last-child {
+                background: url(../../img/account/balance.png), darken(#4d6a80, 10%);
+            }
+        }
+    }
+    .deposit-btn {
+        @include container(60%);
+        a {
+            font-size: 18px;
+        }
+    }
+    .promo-balance {
+      @include container(90%);
+      background: #e7e5e1;
+      border-radius: em(8);
+      height: 80px;
+    }
+    img:last-child {
+        position: relative;
+        top: 16px;
+        left: 6px;
+        z-index: -1;
+    }
+}
+
+.balance .vip-points {
+    @include container(90%);
+    border-radius: em(8);
+    background: #9cd1f9;
+    border: 1px solid rgba(black, 0.2);
+    box-shadow:-14px 155px 67px -150px rgba(0,0,0,0.75);
+    h5 {
+        color: #fff;
+        background: #749dbc;
+        line-height: 2em;
+        margin-top: 0;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+    }
+    .progress-container {
+        .wrap {
+            @include span(12 of 12);
+            .progress {
+                @include span(9 of 12 before);
+                width:66.57627%;
+                height: 15px;
+            }
+            div.gift {
+                @include span(last 3 of 12);
+                position: relative;
+                right:1em;
+                top:-1em;
+                img {
+                  max-width: 100%;
+                }
+                p {
+                  text-align: center;
+                  margin: 0;
+                  margin-left: 0.2em;
+                }
+            }
+        }
+    }
+    hr {
+      border-color:darken($second-color, 10%);
+      margin:0;
+      margin-bottom: 0.4em;
+    }
+    table {
+       color:#58595b;
+       font-size: em(14);
+       border-collapse: separate;
+       border-spacing: 0.5em;
+       font-weight: 500;
+    }
+}

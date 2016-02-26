@@ -1,0 +1,18 @@
+<div class="wrap-modal">
+    <h4 class="modal-title">Add Promo to Location</h4>
+    <hr>
+    <div class="modal-body">
+        <div class="form-group">
+            <select class="form-control" ng-model="promo" ng-options="promo.name for promo in promos track by promo.id" required>
+                <option value="">Select Promo</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <a ng-click="AddPromo(promo, 'first')" class="btn btn-info">Add as first</a>
+             <a ng-click="AddPromo(promo, 'last')" class="btn btn-info">Add as Last</a>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">close</button>
+        </div>
+    </div>
+</div>

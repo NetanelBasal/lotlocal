@@ -1,0 +1,15 @@
+  <div class="main-shell clearfix">
+    <div class="view-window clearfix" ng-mouseenter="stopAutoSlide()" ng-mouseleave="startAutoSlide()">
+      <ul class="full-size-list list-unstyled" ng-style="listPosition" >
+        <li ng-repeat="image in galleryData track by $index">
+          <a href=""><img ng-src="{{image}}" class="img-responsive"/></a>
+        </li>
+      </ul>
+    </div>
+    <div class="bullets clearfix">
+      <ul>
+        <li ng-repeat="image in galleryData track by $index" ng-class="{active: selected == image}" ng-click="scrollTo(image,$index)">
+        </li>
+      </ul>
+    </div>
+  </div>

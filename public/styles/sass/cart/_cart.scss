@@ -1,0 +1,169 @@
+main.cart {
+    .wrap-cart {
+        @include container(93%);
+    }
+    .submit-order {
+        @include span(12 of 12);
+        .payment-methods {
+            @include span(6 of 12);
+            > div:first-child {
+                @include span(4 of 12 0);
+                margin-top: 8px;
+            }
+            > div:last-child {
+                @include span(8 of 12 last);
+                position: relative;
+                right: 20px;
+                img {
+                    margin-right: 5px;
+                }
+                ul.dropdown-menu {
+                    width: 100%;
+                    li {
+                        padding: 5px;
+                        cursor: pointer;
+                        border-bottom: 1px solid #DDCECE;
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
+                .btn-group {
+                    button {
+                        position: relative;
+                        padding: 3px 5px;
+                    }
+                    width: 100%;
+                    p {
+                        width: 28px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: #EEE;
+                        height: 100%;
+                        text-align: center;
+                    }
+                    .caret {
+                        position: relative;
+                        top: 5px;
+                    }
+                    .btn {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        > div:last-child {
+            @include span(6 of 12 last);
+            text-align: right;
+        }
+    }
+}
+
+main.cart section {
+    .head {
+        height: 36px;
+        border-radius: 5px 5px 0 0;
+        background-color: $even-th-bg;
+        margin-bottom: 0.3em;
+        h3 {
+            padding: 7px 0 0 15px;
+            font-size: 18px;
+        }
+    }
+}
+
+main.cart section .account-table {
+    padding-top: 0;
+}
+
+main.cart section table {
+    .fa {
+        font-size: 1.8em;
+    }
+    .fa-trash-o {
+        margin-right: 1.5em;
+    }
+    tr.first {
+        img {
+            width: 112px;
+        }
+    }
+    tr.first.group {
+        border: none;
+        img {
+            width: 80px;
+            margin-right: 0.9em;
+        }
+    }
+    tr.first td {
+        vertical-align: middle;
+        &:nth-child(2) {
+            text-align: left;
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+        &:nth-child(3), &:nth-child(4) {
+            width: 160px;
+        }
+    }
+    tr.info {
+        td {
+            background: transparent;
+            padding: 0;
+            border-color: $second-color;
+        }
+        div.row-toggle {
+            display: none;
+            border: 1px solid $second-color;
+            .wrap {
+                @include container(60%);
+                margin: 2em auto;
+            }
+        }
+        @include square-nums;
+        ul.square li.extra {
+            border: 1px solid red;
+        }
+        ul.square li {
+            text-align: center;
+        }
+        .lot-nums {
+            position: relative;
+            p.draws-img {
+                position: absolute;
+                top: 4px;
+                right: 140px;
+                img {
+                    height: 35px;
+                    max-width: 30px;
+                }
+            }
+        }
+    }
+}
+
+main.cart section .total {
+    height: 36px;
+    border-radius: 0 0 5px 5px;
+    background-color: $main-color;
+    text-align: right;
+    margin-top: -4px;
+    margin-bottom: 1em;
+    p {
+        color: #fff;
+        font-size: 20px;
+        margin-right: 1em;
+    }
+}
+
+main.cart section .clear-all {
+    p {
+        width: 100px;
+    }
+}
+main.cart section table tr.info div.row-toggle .wrap {
+    text-align: center;
+}

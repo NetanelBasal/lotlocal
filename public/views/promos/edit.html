@@ -1,0 +1,37 @@
+<div class="wrap-modal">
+    <h4 class="modal-title">Edit Promo</h4>
+    <hr>
+    <div class="modal-body">
+        <form name="editPromoForm">
+            <div class="form-group">
+                <label><span class="main-color">Name</span> *:</label>
+                <input type="text" class="form-control" ng-model="promoCopy.name" required>
+            </div>
+            <div class="form-group">
+                <label><span class="main-color">Image Url</span> *:</label>
+                <input type="text" class="form-control" ng-model="promoCopy.img" required>
+            </div>
+            <div class="form-group">
+                <label><span class="main-color">Link to</span> *:</label>
+                <input type="text" class="form-control" ng-model="promoCopy.url" placeholder="/promo/somePromo" required>
+            </div>
+         <!--    <div class="form-group">
+                <label>Location:</label>
+
+                <div class="checkbox" ng-repeat="loc in promoCopy.loc_ord">
+                    <label>
+                        <input type="checkbox" ng-model="loc.chosen">
+                        {{loc.loc}}
+                    </label>
+                    <label>Order</label>
+                    <label><input type="text" ng-model="loc.ord"></label>
+                </div>
+            </div> -->
+        </div>
+    </form>
+    <div class="alert alert-success" ng-show="saved">The promo updated successfully!</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">close</button>
+        <button type="button" class="btn primary-btn" ng-click="editPromo()" ng-disabled="editPromoForm.$invalid || editPromoForm.$pristine">Save</button>
+    </div>
+</div>

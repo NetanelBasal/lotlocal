@@ -1,0 +1,78 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+  <main class="content-box my-account">
+    <div class="line-color"></div>
+    <div id="level-one">
+      <h4>My Account</h4>
+      <div class="wrap-content">
+        <article>
+          <div class="tabs">
+            <ul class="list-unstyled list-inline">
+              <li ui-sref="account.personalInfo" ui-sref-active="account-tab-active">
+                <img src="img/account/tabs/info.png" alt="personal-info">
+                <span>Personal Information</span>
+              </li>
+              <li ui-sref="account.payments" ui-sref-active="account-tab-active">
+                <img src="img/account/tabs/payments.png" alt="my-payments">
+                <span>My Payment Methods</span>
+              </li>
+              <li ui-sref="account.transactions" ui-sref-active="account-tab-active">
+                <img src="img/account/tabs/transactions.png" alt="my-transactions">
+                <span>My Transactions</span>
+              </li>
+              <li ui-sref="account.tickets" ui-sref-active="account-tab-active">
+                <img src="img/account/tabs/tickets.png" alt="my-tickets">
+                <span>My Tickets</span>
+              </li>
+              <li ui-sref="account.purchases" ui-sref-active="account-tab-active">
+                <img src="img/account/tabs/purchases.png" alt="my-purchases">
+                <span>My Purchases</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs-tablet">
+            <div class="open-accont-tabs">
+              <p>Menu</p>
+            </div>
+            <div class="slide-nav">
+              <ul class="list-unstyled">
+                <li ui-sref="account.personalInfo" ui-sref-active="account-tab-active">
+                  <span>Personal Information</span>
+                </li>
+                <li ui-sref="account.tickets" ui-sref-active="account-tab-active">
+                  <span>My Tickets</span>
+                </li>
+                <li ui-sref="account.purchases" ui-sref-active="account-tab-active">
+                  <span>My Purchases</span>
+                </li>
+                <li ui-sref="account.payments" ui-sref-active="account-tab-active">
+                  <span>My Payment Methods</span>
+                </li>
+                <li ui-sref="account.transactions" ui-sref-active="account-tab-active">
+                  <span>My Transactions</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="level-two">
+            <div id="level-three">
+              <div class="ui-view view"></div>
+            </div>
+            <!-- end level three -->
+          </div>
+          <!-- end level two -->
+        </article>
+        <aside class="balance">
+          <div ng-include="'views/myAccount/balance.html'"></div>
+        </aside>
+      </div>
+      <!-- end wrap-content -->
+    </div>
+    <!-- end level one -->
+  </main>
+</div>
+<script>
+  $('.open-accont-tabs').click(function() {
+    $(this).parent().find('.slide-nav').slideToggle();
+  })
+</script>

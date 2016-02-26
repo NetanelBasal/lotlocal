@@ -1,0 +1,191 @@
+.main-content {
+    margin-top: 0;
+    @include container(1000px);
+    > section {
+        @include span(9 of 12);
+        #first-promos-slider, #testi, #why, #promos-latest {
+            @include span(12 of 12);
+        }
+        #promos-latest {
+            #promos {
+                @include span(7 of 12);
+            }
+            #latest {
+                @include span(last 5 of 12);
+            }
+        }
+        #testi, #why {
+            border-top: 3px solid;
+            img {
+                margin-top: 0.5em;
+            }
+        }
+    }
+    aside {
+        @include span(last 3 of 12);
+        .home-promo {
+            @include span(12 of 12);
+            width: 100%;
+            line-height: 180px;
+            text-align: center;
+            background: #e3dad0;
+            border-radius: em(7);
+            margin-top: 0.5em;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        .total-paid {
+            margin-top: 1em;
+            background: #fff;
+            border: solid 1px #c0bcb8;
+            @include border-top-radius(6px);
+            .head {
+                background: $third-color;
+                text-align: center;
+                color: #fff;
+                font-size: 20px;
+                padding: 0.4em 0;
+                @include border-top-radius(6px);
+            }
+            .number {
+                font-size: 26px;
+                text-align: center;
+            }
+            div:last-child {
+                font-size: 12px;
+                padding: 6px 13px;
+            }
+        }
+    }
+}
+
+/*==========  latest news  ==========*/
+#latest {
+    > p {
+        text-align: center;
+        font-size: 18px;
+        border-top: 2px solid $main-color;
+        border-bottom: 2px solid $main-color;
+        padding: 5px 0;
+    }
+}
+
+/*==========  tetsimonals  ==========*/
+.main-content #testi {
+    @include span(12 of 12);
+    padding-top: 10px;
+    .testi-animate.ng-enter {
+        animation: fadeInLeft 1s;
+    }
+    .main-color {
+        font-size: 18px;
+    }
+    section:first-child {
+        position: relative;
+        @include span(9 of 12 inside);
+        > div > div {
+            font-size: 18px;
+        }
+        img.shadow {
+            position: absolute;
+        }
+        > div {
+            background: #fff;
+            border: solid 1px #c0bcb8;
+            border-radius: 7px;
+            padding: 10px;
+        }
+    }
+    section:last-child {
+        margin-top: 2em;
+        margin-left: 2em;
+        @include span(2 of 12);
+        img {
+            width: 102px;
+            height: 131px;
+            box-shadow: 7px 7px 20px 0px rgba(0, 0, 2, 0.32);
+        }
+        > div {
+            margin-left: 0.8em;
+        }
+        div span {
+            width: 42px;
+            line-height: 20px;
+            height: 27px;
+            background: $third-color;
+            cursor: pointer;
+            display: inline-block;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+        }
+        div span.right {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-left: -4px;
+        }
+        div span.left {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+}
+
+/*==========  why  ==========*/
+.main-content #why {
+    padding-top: 10px;
+    padding-bottom: 10em;
+    > p:first-child {
+        font-size: 18px;
+    }
+}
+
+#first-promos-slider {
+    .slick-list {
+        // border: solid 1px #d7d7d6;
+        // border-radius: 5px;
+        width: 557px !important;
+        max-width: 557px !important;
+    }
+    position: relative;
+    .next, .prev {
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+    }
+    .next {
+        right: 0;
+    }
+    .prev {
+        left: 0;
+    }
+}
+
+#first-promos-slider {
+    position: relative;
+    .prev, .next {
+       width: 58px;
+       height:232px;
+       border: solid 1px #d7d7d6;
+       text-align: center;
+       position: absolute;
+       img {
+        margin-top: 70px;
+        opacity: 0.7;
+        &:hover {
+            opacity:1;
+        }
+       }
+    }
+    .prev {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        left: 0;
+    }
+     .next {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        right: 0;
+    }
+}

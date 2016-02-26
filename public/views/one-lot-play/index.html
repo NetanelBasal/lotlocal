@@ -1,0 +1,38 @@
+<div class="top-bg top-bg-one-play"></div>
+<div class="row">
+  <header class="one-play">
+    <div class="display-table">
+      <div class="table-cell logo">
+        <img ng-src="img/logos/{{lot.lottery.id}}.png" alt="">
+      </div>
+      <div class="table-cell name">
+        <p>{{lot.lottery.name}}</p>
+      </div>
+      <div class="table-cell price">
+        <p><span ng-bind-html="lot.lottery.currency | moneyType"></span>{{lot.lottery.currencySymbol}} {{lot.lottery.jackpotAmount | number:0}}</p>
+      </div>
+      <div class="table-cell time">
+        <ul class="list-unstyled" timer end-time="lot.lottery.nextDrawDate">
+          <li><div class="time-left">{{ddays}}</div><div class="type">days</div></li>
+          <li><div class="time-left">{{hhours}}</div><div class="type">Hrs</div></li>
+          <li><div class="time-left">{{mminutes}}</div><div class="type">min</div></li>
+          <li><div class="time-left">{{sseconds}}</div><div class="type">sec</div></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="row">
+  <div class="play-tabs one-play">
+    <ul class="list-inline list-unstyled">
+      <li ui-sref-active="play-tab-active" ui-sref=".Personal"><a>Personal</a></li>
+      <li ui-sref-active="play-tab-active" ui-sref=".Group"><a>Group play</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <main class="content-box one-play-play">
+    <div class="line-color"></div>
+    <div class="ui-view"></div>
+  </main>
+</div>

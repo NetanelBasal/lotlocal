@@ -1,0 +1,641 @@
+@mixin border-around($width) {
+    @include border-top-radius($width);
+    @include border-bottom-radius($width);
+}
+
+.open-row-if-count-one {
+    display: block !important;
+}
+
+/*==========  Assets  ==========*/
+.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+
+.mt {
+    margin-top: 1em;
+}
+
+.main-color {
+    color: $main-color;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.third-color {
+    color: $third-color;
+}
+
+hr {
+    border-color: $second-color;
+}
+
+.input-group-addon {
+    background: #fff;
+    min-width: 46px;
+}
+
+.dd .ddTitle {
+    background: #fff;
+}
+
+.dd .ddChild {
+    min-height: 100px;
+}
+
+/*==========  Buttons  ==========*/
+.primary-btn, .secondry-btn, .secondry-btn:active, .primary-btn:active, .secondry-btn:focus, .primary-btn:focus {
+    color: #fff;
+    border: solid 1px #999;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.primary-btn, .primary-btn:active {
+    background: $main-color;
+    &:hover {
+        background: darken($main-color, 10%);
+    }
+}
+
+.secondry-btn, .secondry-btn:active {
+    background: $third-color;
+    &:hover {
+        background: darken($third-color, 10%);
+    }
+}
+
+a.link {
+    color: $main-color;
+    text-decoration: underline;
+    &:hover {
+        color: darken($main-color, 10%);
+    }
+}
+
+/*==========  Modal  ==========*/
+.modal-body.scroll-modal {
+    height: 540px;
+    overflow-y: scroll;
+}
+
+.modal-lg > .modal-content {
+    padding: 1em;
+}
+
+.modal-sm {
+    width: 500px;
+    padding: 1em;
+    .modal-content {
+        padding: 1em;
+        border-radius: 5px;
+        border-top: 10px solid $main-color;
+        .close {
+            background: $main-color;
+            color: #fff;
+            opacity: 1;
+            width: 15px;
+            height: 16px;
+            font-size: 14px;
+        }
+    }
+}
+
+.help-block {
+    color: red;
+}
+
+.display-table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: em(10);
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    margin-left: em(10);
+    vertical-align: middle;
+}
+
+.fixed {
+    table-layout: fixed;
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
+
+.table > thead > tr > th {
+    border-bottom: none;
+}
+
+/*==========  Main Content Box  ==========*/
+
+.top-bg {
+    width: 100%;
+    background: $second-color;
+    position: absolute;
+    z-index: -1;
+    height: 13.75em;
+}
+
+.content-box {
+    @include container(1000px);
+    border: 1px solid rgba(black, 0.1);
+    margin-top: 0;
+    border-top: none;
+    background: #fff;
+    border-radius: em(8);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    padding-bottom: 1em;
+    .line-color {
+        height: 1em;
+        background: $main-color;
+        @include border-top-radius(em(8));
+    }
+}
+
+/*==========  main lot time style  ==========*/
+ul.main-lot-time-style li {
+    background: $home-main-lot-draw-time-bg;
+    text-align: center;
+    width: 74px;
+    height: 71px;
+    margin-left: 16px;
+    line-height: 4.875em;
+    box-shadow: 1px 4px 9px rgba(0, 0, 0, 0.4);
+    border-radius: em(3);
+    @include breakpoint($tablet) {
+        @include size(em(50));
+        line-height: em(50);
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+    div.time-left {
+        font-size: 44px;
+        color: #fff;
+        @include breakpoint($tablet) {
+            font-size: 1.5em;
+        }
+    }
+    div.type {
+        color: #000;
+        position: relative;
+        top: -20px;
+    }
+}
+
+.btn-main-lot {
+    line-height: 1.5em;
+    font-size: 40px;
+    border-radius: 15px;
+    height: 62px;
+    padding: 0;
+    width: 363px;
+}
+
+/*==========  Account  ==========*/
+
+.account-table {
+    font-size: 12px;
+    padding-top: 1em;
+    @include span(12 of 12);
+    @include breakpoint($tablet) {
+        font-size: 11px;
+    }
+}
+
+.account-table table thead tr > th {
+    vertical-align: top;
+    cursor: pointer;
+    > * {
+        cursor: pointer;
+    }
+}
+
+.account-table table thead tr > th, .account-table table tbody tr > td {
+    text-align: center;
+    position: relative;
+}
+
+.account-table table thead tr > th:nth-child(odd) {
+    background: $odd-th-bg;
+}
+
+.account-table table thead tr > th:nth-child(even) {
+    background: $even-th-bg;
+}
+
+.account-table table tbody tr.first > td:nth-child(odd) {
+    background: $odd-td-bg;
+}
+
+.account-table table tbody tr.first > td:nth-child(even) {
+    background: $even-td-bg;
+}
+
+.account-table table tbody tr td {
+    padding-bottom: 0;
+}
+
+.account-table table tbody tr > td.text-left {
+    text-align: left;
+}
+
+.row-toggle {
+    display: none;
+    border: 1px solid $second-color;
+    padding: 0 1em 1em 1em;
+}
+
+.icon-open, .icon-close {
+    float: right;
+    margin-top: 5px;
+}
+
+table tr.info > td {
+    background: #fff !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+tr.first {
+    cursor: pointer;
+}
+
+/*==========  Progress bar  ==========*/
+
+.progress, .progress-bar-success {
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar-success {
+    background-color: $third-color;
+}
+
+.progress-bar-warning {
+    background-color: $main-color;
+}
+
+/*==========  Balls Nums  ==========*/
+ul.balls {
+    li {
+        background-image: radial-gradient(ellipse farthest-corner at center, white -40%, #2cbaec 10%, #005e88 100%);
+        margin-left: 0.2em;
+        border-radius: 12.5px;
+        width: 23px;
+        height: 24px;
+        padding: 3px;
+        p {
+            margin-bottom: 0;
+            color: #fff;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+    li.extra {
+        background-image: radial-gradient(ellipse farthest-corner at center, white -40%, #f57f2f 10%, #9b3c21 100%);
+    }
+}
+
+/*==========  Square Nums  ==========*/
+@mixin square-nums {
+    ul.square {
+        margin-bottom: 0.1em;
+        width: 85%;
+        li.extra {
+            border-color: red;
+        }
+    }
+    ul.square li {
+        border: 1px solid rgba(black, 0.4);
+        border-radius: em(5);
+        display: inline-block;
+        p {
+            margin-bottom: 0;
+            width: 17px;
+        }
+        &:first-child, &:last-child {
+            border: none;
+            font-weight: 500;
+        }
+        &:first-child {
+            p {
+                color: $third-color;
+            }
+        }
+    }
+}
+
+/*==========  Plays tabs  ==========*/
+
+.play-tabs {
+    @include container(1000px);
+    padding-left: 2em;
+    ul {
+        margin-bottom: 0;
+    }
+    li {
+        width: 178px;
+        height: 43px;
+        padding: 0.5em 1em;
+        background: #fff;
+        @include border-top-radius(em(7));
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+        a {
+            color: $main-color;
+        }
+    }
+    .play-tab-active {
+        background: $main-color;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+/*==========  arrows sort table and icons sizes  ==========*/
+.arrowDown {
+    position: absolute;
+    top: 12px;
+    left: 84%;
+    @include triangle(10px, gray, down);
+}
+
+.arrow {
+    position: absolute;
+    top: 12px;
+    left: 84%;
+    @include triangle(10px, gray, up);
+}
+
+.fa-check-square {
+    color: green;
+}
+
+.tabels-icon-size {
+    font-size: 1.2em;
+}
+
+.tooltip {
+    .tooltip-inner {
+        color: #414042;
+        background: #ffffb2;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        border: solid 1px #999;
+    }
+    .tooltip-arrow {
+        border-color: darken(#ffffb2, 10%) !important;
+    }
+}
+
+.play-tab-active {
+    background: $main-color;
+    color: #fff;
+}
+
+/*==========  banner  ==========*/
+.banner {
+    @include container(97%);
+    border-radius: em(5);
+    border: solid 1px #d7d7d6;
+    background-image: radial-gradient(ellipse farthest-corner at center, white 30%, #e4e4e4 100%);
+    padding-top: 0.7em;
+    .wrapper {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/*==========  next btn  ==========*/
+.next-btn {
+    width: 241px;
+    height: 65px;
+    border-radius: 5px;
+    box-shadow: 0 0 13px #4d8600;
+    border: solid 1px #999;
+    display: block;
+    font-size: 38px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/*==========  checkbox  ==========*/
+.special-checkbox {
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox] + label {
+        background: url(../../images/wrap-v.png) no-repeat;
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        padding: 0 0 0 0px;
+    }
+    input[type=checkbox]:checked + label {
+        background: url(../../images/v.png) no-repeat, url(../../images/wrap-v.png) no-repeat;
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        padding: 0 0 0 0px;
+    }
+}
+
+/*==========  cart img  ==========*/
+.cart-img {
+    margin-bottom: 0.3em;
+    position: relative;
+    text-align: right;
+    span {
+        display: inline-block;
+        color: #fff;
+        @include size(22px);
+        border-radius: 11px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 13px;
+        z-index: 2;
+    }
+    img {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.info-active {
+    background: $info-li-active;
+}
+
+/*==========  accordion  ==========*/
+.panel-group {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.panel-default > .panel-heading {
+    background: url(../../images/accor-arrow.png), $head-bg-acc;
+    background-repeat: no-repeat;
+    background-position: 8px 3px;
+    border: none;
+    padding: 6px 15px;
+    .panel-title {
+        a {
+            font-size: 18px;
+            padding-left: 10px;
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+.panel-default.active-acc > .panel-heading {
+    background: url(../../images/accor-arrow.png), $active-acc;
+    background-repeat: no-repeat;
+    background-position: 8px 3px;
+    border: none;
+    padding: 6px 15px;
+    .panel-title {
+        a {
+            font-size: 18px;
+            padding-left: 10px;
+        }
+    }
+}
+
+.panel-body {
+    padding: 0 6px;
+    padding-bottom: 3px;
+    p {
+        padding-top: 3px;
+    }
+    hr {
+        margin: 0;
+        margin-bottom: 2px;
+        border-top: 1px solid $border-top-color-acc;
+    }
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border: none;
+    background: $active-acc;
+}
+
+/*==========  bundles  ==========*/
+.bundles-tpl {
+    ul.draws-list {
+        margin-bottom: 0;
+    }
+    ul.draws-list li {
+        width: 87px;
+        height: 69px;
+        border-radius: 3px/3px 3px 2px 2px;
+        background-color: #fff;
+        border: solid 1px #96cffa;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        margin-left: 0.4em;
+        position: relative;
+        &:first-child {
+            margin-left: 0;
+        }
+        p {
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+        p.drawNum {
+            font-size: 30px;
+            margin-top: -5px;
+        }
+        p.drawPrice {
+            font-size: 10px;
+            padding-top: 3px;
+        }
+        p.drawSave {
+            margin-top: -9px;
+            padding-top: 2px;
+        }
+    }
+    .auto-renew {
+        text-align: right;
+        label {
+            font-weight: normal;
+        }
+    }
+}
+
+.selectedDraw {
+    border: 4px solid $second-color !important;
+    height: 73px !important;
+}
+
+.selectedDraw.best-value {
+    height: 90px !important;
+    border-color: $second-color !important;
+}
+
+.best-value {
+    background: $main-color !important;
+    color: #fff !important;
+    height: 86px !important;
+    border: 4px solid transparent !important;
+    .drawSave {
+        color: #fff !important;
+    }
+}
+
+/*==========  total play  ==========*/
+
+.total-sum {
+    > div:first-child {
+        @include span(8 of 12 inside);
+        padding: 0.3em 0.5em;
+        padding-bottom: 0;
+        background: #dedbd8;
+        p:first-child {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        table {
+            width: 150%;
+        }
+        table td {
+            font-size: 12.70px;
+        }
+        table tr.beforeTotal td {
+            padding: 2px 0;
+            div {
+                background-color: #fff;
+                height: 3px;
+            }
+        }
+    }
+    > div:last-child {
+        @include span(4 of 12 last inside);
+        line-height: 105px;
+        background: url("../../images/play-shape.png"), linear-gradient(#4a4a4a 42.1%, #343433 54.3%);
+        background-repeat: no-repeat;
+        text-align: center;
+        input[type="button"] {
+            width: 91px;
+            line-height: 30px;
+            padding: 0;
+            border-radius: 6px;
+            background-color: $main-color;
+            border: solid 1px rgba(255, 255, 255, 0.4);
+        }
+    }
+}

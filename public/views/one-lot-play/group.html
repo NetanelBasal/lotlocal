@@ -1,0 +1,81 @@
+<div class="row group-one-play">
+  <main>
+    <div class="wrapper">
+      <div class="row">
+        <header>
+          <p class="main-color">Play the Group MegaMillion and get 50 CHANCES to WIN every DRAW!!!</p>
+        </header>
+      </div><!-- end header -->
+      <div class="row">
+        <section>
+          <article>
+            <div>
+              <img src="images/group-single.png" alt="group-single" class="img-responsive">
+            </div>
+            <p><i class="fa fa-info-circle"></i> Draw days: Tuesday & Friday</p>
+            <div>
+              <div ng-include="'views/directives/accordion.html'"></div>
+            </div>
+          </article>   <!-- end info -->
+          <article>
+            <section class="shares-draws">
+              <article>
+               <p class="main-color">How many shares would you like to own?</p>
+               <p>Maximum 150 shares in a Group.</p>
+               <div>
+                <a ng-click="toggleNumShares(-1)"><i class="fa fa-minus"></i></a>
+                <span>{{lot.numShares}}</span>
+                <a ng-click="toggleNumShares(1)"><i class="fa fa-plus"></i></a>
+                <a class="btn primary-btn">See my numbers</a>
+              </div>
+            </article>   <!-- end shares -->
+            <article>
+              <p class="main-color">How many draws would you like to play?</p>
+              <div ng-include="'views/directives/bundles.html'"></div>
+            </article>  <!-- end draws -->
+          </section>
+          <div class="row">
+
+            <div class="play-count">
+              <div class="total-sum clearfix">
+                <div>
+                  <p class="main-color">Total Sum</p>
+                  <table class="borderless">
+                    <tr>
+                      <td>Shares</td>
+                      <td>{{lot.numShares}}</td>
+                    </tr>
+                    <tr>
+                      <td>{{bundle.numberOfDraws}} draws</td>
+                      <td>{{bundle.numberOfDraws * lot.numShares}}$</td>
+                    </tr>
+                    <tr>
+                      <td>Discount</td>
+                      <td>{{bundle.marketingDescription}}</td>
+                    </tr>
+                    <tr class="beforeTotal">
+                      <td colspan="2"><div></div></td>
+                    </tr>
+                    <tr>
+                      <td>Total</td>
+                      <td>{{calcTotal() | number:2}}$</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-sm-6 totalPlay">
+                  <input type="button" class="btn primary-btn" value="Play" ng-click="addToCart()">
+                </div>
+              </div>   <!-- end wrap-total -->
+            </div>
+          </article>  <!-- end total-play -->
+        </div>
+      </div>
+
+
+    </article>   <!-- end game -->
+  </section>
+</div>
+
+</div>
+</main>
+</div>

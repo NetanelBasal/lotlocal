@@ -1,0 +1,82 @@
+<div class="wrap-modal">
+    <h4 class="modal-title">Add Payment Method</h4>
+    <hr>
+    <div class="modal-body">
+        <form name="form.addPaymentForm">
+            <div class="form-group cardType">
+                <input type="radio" name="cardType" id="VisaA" ng-model="user.card.type" value="Visa" required>
+                <label for="VisaA">
+                    <img src="images/icon_visa.png" alt="visa">
+                </label>
+                <input type="radio" name="cardType" id="MasterCardA" ng-model="user.card.type" value="MasterCard" required>
+                <label for="MasterCardA">
+                    <img src="images/icon_mastercard.png" alt="mastercard">
+                </label>
+            </div>
+
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cardType, 'required')">This field is required</p>
+
+
+            <div class="form-group">
+                <label>Card Number
+                    <span class="main-color">*</span>
+                </label>
+                <input type="text" class="form-control" ng-model="bg.number" name="cardNum" required ng-pattern="/[0-9]+/" ng-minlength="10">
+            </div>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cardNum, 'required')">This field is required</p>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cardNum, 'pattern')">Only Numbers Allowed</p>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cardNum, 'minlength')">Minimum 10 chars</p>
+            <div class="form-group">
+                <label>Expiration Date:
+                    <span class="main-color">*</span>
+                </label>
+                <select ng-model="user.card.month" ng-options="month for month in expiration.month track by month" required class="" name="month">
+                    <option value="">month</option>
+                </select>
+                <p class="help-block" ng-if="checkErrors(form.addPaymentForm.month, 'required')">This field is required</p>
+                <select ng-model="user.card.year" ng-options="year for year in expiration.year track by year" required class="" name="year">
+                    <option value="">year</option>
+                </select>
+            </div>
+
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.year, 'required')">This field is required</p>
+            <div class="form-group">
+                <label>CVV/CVC2:
+                    <span class="main-color">*</span>
+                </label>
+                <input ng-model="user.card.cvv" type="text" class="form-inline" required ng-pattern="/[0-9]+/" ng-minlength="3" ng-maxlength="4" name="cvv"><i tooltip-placement="bottom" tooltip="Your 3 or 4 digit security code on the back of your card" class="fa fa-question-circle"></i>
+            </div>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cvv, 'required')">This field is required</p>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cvv, 'pattern')">Only Numbers Allowed</p>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.cvv, 'minlength')">Minimum 3 digits</p>
+            <div class="form-group" ng-if="userService.user.hasPayment">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="defaultP" ng-model="user.card.defaultP" name="defaultPayment">Default Payment
+                    </label>
+                </div>
+
+
+            </div>
+            <div class="form-group" ng-if="!userService.user.hasPayment">
+                <label>
+                    <i class="fa fa-check-square"></i>
+                </label>
+                <span>Default Payment</span>
+            </div>
+            <div class="form-group">
+                <label>Card Owner Name
+                    <span class="main-color">*</span>
+                </label>
+                <input type="text" class="form-control" ng-model="user.card.holderName" name="owner" required ng-pattern="/^[^0-9]+$/">
+            </div>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.owner, 'required')">This field is required</p>
+            <p class="help-block" ng-if="checkErrors(form.addPaymentForm.owner, 'pattern')">Only letters allowed</p>
+            <div ng-show="saved" class="alert alert-success">Payment saved successfully!</div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">close</button>
+        <button type="button" class="btn primary-btn btn-sm" ng-click="addPayment()">Add Payment Method</button>
+    </div>
+</div>

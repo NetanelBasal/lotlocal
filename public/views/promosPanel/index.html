@@ -1,0 +1,36 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+    <main class="content-box my-account">
+        <div class="line-color"></div>
+        <section class="promos-dash all-promos">
+            <div class="wrap">
+
+                <article class="clearfix">
+                   <div class="pull-left">
+                       <a ng-click="addPromo()" class="btn primary-btn">Add Promo+</a>
+                   </div>
+                   <div class="row">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default" ui-sref="promosPanel" ui-sref-active="active">All Promos</button>
+                        <button type="button" class="btn btn-default" ui-sref="promoLoc">Promos Locations</button>
+                    </div>
+                </div>
+                <div class="row">
+                  <div ng-repeat="promo in promos"  class="promo-desc mt">
+                    <a ng-href="{{promo.url}}" target="_blank"><img ng-src="{{promo.img}}" alt=""></a>
+                    <div class="control-promo">
+                        <a class="btn btn-info" ng-if="!showLoc" ng-click="editPromo(promo)"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-danger" ng-click="delPromo(promo)"><i class="fa fa-trash-o"></i></a>
+                    </div>
+                    <div>
+                        <h4><span class="main-color">Name:</span> {{promo.name}}</h4>
+                        <h4><span class="main-color">Url:</span> {{promo.url}}</h4>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+</section>
+</main>
+</div>

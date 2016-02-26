@@ -1,0 +1,30 @@
+ <section class="lot-list">
+   <article class="lot" ng-repeat="lot in lotteries">
+      <div class="display-table">
+        <div class="table-cell" ng-class="{lotLeftFirst: $first, lotBgLeft: !$first}"></div>
+
+         <div class="table-cell logo" ng-class="{yellowLine: $first}">
+            <img ng-src="img/logos/{{lot.lottery.id}}.png" alt="{{lot.lottery.id}}" class="img-circle">
+         </div>
+         <div class="table-cell name" ng-class="{yellowLine: $first}">
+            <img src="img/flag.png" alt="">
+            <p>{{lot.lottery.name}} {{lot.lottery.originCountry}}</p>
+         </div>
+         <div class="table-cell price" ng-class="{yellowLine: $first}">
+            <p>{{lot.lottery.jackpotAmount | number:0}}$</p>
+         </div>
+         <div class="table-cell time" ng-class="{yellowLine: $first}">
+             <ul class="list-unstyled" timer end-time="lot.lottery.nextDrawTime">
+                    <li><div class="time-left">{{ddays}}</div><div class="type">days</div></li>
+                    <li><div class="time-left">{{hhours}}</div><div class="type">Hrs</div></li>
+                    <li><div class="time-left">{{mminutes}}</div><div class="type">min</div></li>
+                    <li><div class="time-left">{{sseconds}}</div><div class="type">sec</div></li>
+            </ul>
+         </div>
+         <div class="table-cell play" ng-class="{yellowLine: $first}">
+          <a class="btn btn-block" ui-sref="one-lot-play.Personal({lotName: lot.name})">PLAY NOW!</a>
+         </div>
+         <div class="table-cell" ng-class="{lotRightFirst: $first, lotBgRight:!$first}"></div>
+       </div>
+   </article>
+ </section>

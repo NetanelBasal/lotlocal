@@ -1,0 +1,16 @@
+{
+    "data": [{
+        "id": 123,
+        "name": "User 123",
+        "balance": {
+            "realMoney": 5,
+            "bonusMoney": 0,
+            "vip": [{
+                "points": 350,
+                "discount": 5,
+                "pointsLeft": 250,
+                "goldDiscount": 10
+            }]
+        }
+    }]
+}

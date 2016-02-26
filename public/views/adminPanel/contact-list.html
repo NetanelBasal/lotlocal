@@ -1,0 +1,43 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+    <main class="content-box my-account contact-list">
+        <div class="line-color"></div>
+        <section>
+            <h3 class="main-color">Contacts List</h3>
+            <h4 ng-if="!contacts.length">You dont have any messages</h4>
+            <table class="table table-hover table-bordered mt" ng-if="contacts.length">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Topic</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td>
+                            <p>{{contact.firstname}}</p>
+                        </td>
+                        <td>
+                            <p>{{contact.email}}</p>
+                        </td>
+                        <td>
+                            <p>{{contact.topic}}</p>
+                        </td>
+                        <td>
+                            <p>{{contact.subject}}</p>
+                        </td>
+                        <td>
+                            <p>{{contact.message}}</p>
+                        </td>
+                        <td><p class="text-center"><a ng-click="delContact(contact)"><i class="fa fa-trash-o fa-2x text-danger"></i></a></p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- end section -->
+    </main>
+</div>

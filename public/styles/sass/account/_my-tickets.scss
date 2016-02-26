@@ -1,0 +1,131 @@
+.my-tickets, .my-transactions {
+    .display-table {
+        @include span(12 of 12);
+    }
+
+    tr.info > td {
+        >div:first-child {
+            border: 1px solid $second-color;
+            display: none;
+        }
+    }
+    tr.info td {
+        text-align: left;
+    }
+    .wrap {
+        @include container(98%);
+        margin: 1em auto;
+        border: em(5) solid $second-color;
+        border-radius: em(8);
+        .display-table{
+            @include span(12 of 12);
+        }
+    }
+    .my-nums {
+        width: 38%;
+        border-right: 1px solid $second-color;
+        border-left: 1px solid $second-color;
+        text-align: center;
+        @include breakpoint($tablet) {
+            border: none;
+            margin-left: 0;
+        }
+         @include breakpoint($tablet) {
+            @include span(6 of 12);
+            text-align: center;
+        }
+    }
+    .lot-info {
+        width: 30%;
+        @include breakpoint($tablet) {
+            @include span(5 of 12);
+        }
+    }
+
+    .results {
+        width:32%;
+        @include breakpoint($tablet) {
+            @include span(12 of 12);
+            text-align: center;
+            margin-top: 1em;
+        }
+    }
+
+    .table-cell {
+        vertical-align: top;
+        padding-left: 0.5em;
+    }
+}
+
+.my-tickets, .my-transactions {
+    .wrap  .display-table {
+        .head {
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+        div.lot-info {
+            ul li img {
+                height: 60px;
+            }
+            td {
+                font-weight: 500;
+                vertical-align: top;
+                p {
+                    margin-bottom: 0.3em;
+                }
+            }
+            tr:first-child > td:first-child {
+                width:70px;
+            }
+        }
+        div.my-nums {
+            @include square-nums;
+            .print {
+                position: relative;
+                text-align: left;
+                margin-left: 14px;
+                p:first-child {
+                    margin-top: 0.3em;
+                    margin-bottom: 0.1em;
+                    font-weight: 500;
+                }
+                p:nth-child(2) {
+                    margin-left: 6.5em;
+                }
+                p:nth-child(3) {
+                    position: absolute;
+                    top: 7%;
+                    left: 52%;
+                    @include breakpoint($tablet) {
+                        left: 50%;
+                    }
+                }
+                img {
+                    width:30px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+.my-tickets , .my-transactions  {
+    .results {
+        p:first-child {
+            text-align: center;
+            margin-bottom: 2em;
+            @include breakpoint($tablet) {
+                text-align: center;
+            }
+        }
+        table td {
+            font-weight: 500;
+        }
+        .bottom-table {
+            @include breakpoint($tablet) {
+                width: 25%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

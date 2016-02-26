@@ -1,0 +1,91 @@
+@import "susy/susy";
+@import "bourbon/bourbon";
+@import "breakpoint/breakpoint";
+@import "vars";
+@import "assets";
+@import "ng-cloak";
+@import "nav";
+@import "footer";
+@import "dashboard";
+@import "promos";
+@import "admin";
+@import "home/main-lot";
+@import "home/main-content";
+@import "home/slider-one";
+@import "account/layout";
+@import "account/balance";
+@import "account/personal";
+@import "account/my-tickets";
+@import "account/my-purchases";
+@import "account/transactions";
+@import "play-lotteries/play";
+@import "play-lotteries/group";
+@import "one-lot-play/play";
+@import "one-lot-play/group";
+@import "latest-results/latest-results";
+@import "latest-results/latest-results-details";
+@import "hunter/hunter.scss";
+@import "hunter/step-one.scss";
+@import "cart/cart.scss";
+@import "cart/auth.scss";
+@import "cart/payment.scss";
+@import "contact/contact.scss";
+@import "info/layout.scss";
+@import "home/mb-slider.scss";
+@import "slick.scss";
+
+body {
+    font-family: $font;
+    background: url(../../images/body-bg.png);
+    color: $body-color;
+    overflow-x:hidden;
+}
+
+@include breakpoint($tablet) {
+    table {
+        table-layout: fixed !important;
+    }
+}
+
+.view.ng-enter {
+    animation: fadeIn 0.5s;
+}
+
+
+
+a {
+    cursor: pointer;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.row {
+    @include susy-clearfix;
+}
+
+
+
+a, a:hover, a:active, a:focus {
+ outline:0;
+}
+
+
+
+.sign-up-modal .btn-login input[type="submit"] {
+    margin-top: 0;
+}
+
+@font-face {
+    font-family: 'robotoblack';
+    src: url('../roboto_black/Roboto-Black-webfont.eot');
+    src: url('../roboto_black/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../roboto_black/Roboto-Black-webfont.woff') format('woff'),
+         url('../roboto_black/Roboto-Black-webfont.ttf') format('truetype'),
+         url('../roboto_black/Roboto-Black-webfont.svg#robotoblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

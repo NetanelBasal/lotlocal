@@ -1,0 +1,106 @@
+.cart .wrap-auth {
+    @include span(12 of 12);
+    .cart-promo {
+        @include span(12 of 12);
+        img {
+            width:100%;
+            max-height: 150px;
+        }
+    }
+    article:first-child {
+        @include span(6 of 12);
+        .btn-login {
+            margin-top: 160px;
+        }
+    }
+    article:last-child {
+        @include span(6 of 12 last);
+    }
+    article {
+        p.help-block {
+          margin:0;
+          margin-top: 0.1em;
+      }
+      padding-bottom: 3em;
+      width: 429px;
+      height: 550px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.26);
+      .head-color {
+        height: 12px;
+        background: $main-color;
+        @include border-top-radius(8px);
+    }
+    .btn {
+        width: 127px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+}
+
+/*==========  sign in  ==========*/
+.cart .wrap-auth article {
+    .wrap {
+        @include container(85%);
+        form {
+            margin-top: 2em;
+        }
+    }
+}
+
+/*==========  sign up  ==========*/
+.cart .wrap-auth article:last-child, .sign-up-modal {
+    .wrap-name {
+        @include span(12 of 12);
+        div {
+            @include span(6 of 12);
+        }
+        div:last-child {
+            @include span(6 of 12 last);
+        }
+    }
+    .country {
+        @include span(6 of 12);
+    }
+    .wrap-phone {
+        @include span(12 of 12);
+        div {
+            &:nth-child(1) {
+                @include span(2 of 12);
+                p {
+                    margin-top: 6px;
+                }
+            }
+            &:nth-child(2), &:nth-child(3) {
+                @include span(3 of 12);
+            }
+            &:nth-child(4) {
+                @include span(4 of 12 last);
+            }
+        }
+    }
+    .wrap-pass {
+      position: relative;
+      @include span(12 of 12);
+      > div {
+        @include span(6 of 12);
+        input {
+            font-size: 12px;
+        }
+    }
+    >div:last-of-type {
+        @include span(6 of 12 last);
+    }
+    .pass-check {
+      position: absolute;
+      right: -20px;
+      top: 10px;
+  }
+}
+.btn-login {
+    margin-top: 1.5em;
+}
+}
+

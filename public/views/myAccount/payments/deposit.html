@@ -1,0 +1,33 @@
+<div class="modal-wrap" ng-if="hasPayment">
+  <div class="modal-body" style="text-align:center;">
+    <form>
+      <div class="form-group">
+        <select class="form-control">
+          <option value="">xxxxxxxxxxx4249</option>
+        </select>
+      </div>
+      <div class="form-group form-inline">
+        <label for="amaount">Deposit Amount</label>
+        <input type="text" class="form-control" id="amaount">
+      </div>
+      <p><a ng-click="addPaymentMethod()">Add payment method</a></p>
+      <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">close</button>
+      <a ng-click="deposit()" class="btn btn-info">Deposit</a>
+    </form>
+  </div>
+</div>
+
+<div class="wrap-modal" ng-if="!hasPayment">
+  <div class="modal-header">
+    <h4 class="modal-title">Deposit</h4>
+  </div>
+  <div class="modal-body" style="text-align:center;">
+    <p>Currently no payment methods in your account</p>
+    <p>Please add a payment method in order to deposit</p>
+    <a ng-click="addPaymentMethod()" class="btn btn-info">Add Payment Method</a>
+    <div class="modal-footer" style="text-align:center;">
+      <p>After adding a payment method, please click again on the Deposit button on the right to add funds to ypur account</p>
+    </div>
+  </div>
+  <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">close</button>
+</div>

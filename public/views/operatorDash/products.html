@@ -1,0 +1,35 @@
+<div class="alert alert-danger" ng-if="config.langs.length == 0">
+  You must have at least one <a ui-sref="operatorDash.langs">language</a>
+</div>
+<div ng-hide="config.langs.length == 0">
+  <div class="form-group">
+    <select class="form-control" ng-model="lang" ng-options="lang.name for lang in config.langs track by lang.id" name="country">
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-control" ng-model="lottery" ng-options="lottery.lottery.name for lottery in lotteries track by lottery.lottery.id" name="lottery">
+    </select>
+  </div>
+
+  <h2>Products</h2>
+  <div class="col-sm-8">
+    <form name="productsForm">
+      <div>
+        <div class="form-group">
+          <label>Slogan (per-language)</label>
+          <input type="text" class="form-control" ng-model="lottery.lottery.slogan.txt[lang.id]">
+        </div>
+        <div class="form-group">
+          <label>Short Description (per-language)</label>
+          <div text-angular ng-model="lottery.lottery.shortDesc.txt[lang.id]"></div>
+        </div>
+        <div class="form-group">
+          <label>Full Description (per-language)</label>
+          <div text-angular ng-model="lottery.lottery.fullDesc.txt[lang.id]"></div>
+        </div>
+      </div>
+    </form>
+    <pre>{{lang | json}}</pre>
+   <pre>{{lottery | json}}</pre>
+  </div>
+</div>

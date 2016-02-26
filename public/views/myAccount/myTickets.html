@@ -1,0 +1,86 @@
+
+
+<div class="sort-info display-table">
+  <div class="table-cell">
+    <select class="form-control input-sm"></select>
+  </div>
+  <div class="table-cell">
+    <select class="form-control input-sm">
+    </select>
+  </div>
+  <div class="table-cell calendar">
+    <i class="fa fa-calendar"></i>
+  </div>
+
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="From date" date-picker/>
+  </div>
+  <div class="table-cell between-dates">
+    <div>-</div>
+  </div>
+  <div class="table-cell date-cell">
+    <input type="text" class="form-control input-sm" placeholder="To date" date-picker/>
+  </div>
+  <div class="table-cell btn-cell">
+    <a class="btn btn-block secondry-btn input-sm">Search</a>
+  </div>
+</div>   <!-- end sort info -->
+<div class="account-table table-responsive">
+  <table class="table my-tickets">
+    <thead>
+      <tr>
+        <th change-arrow ng-click="sort('deliveryDate')"><span ng-class="{arrow: setArrowUp('deliveryDate'), arrowDown:setArrowDown('deliveryDate')}"></span>Date</th>
+        <th change-arrow ng-click="sort('lottery.name')"><span ng-class="{arrow: setArrowUp('lottery.name'), arrowDown:setArrowDown('lottery.name')}"></span>Lottery</th>
+        <th>Ticket</th>
+        <th>Line</th>
+        <th change-arrow ng-click="sort('vipPoints')"><span ng-class="{arrow: setArrowUp('vipPoints'), arrowDown:setArrowDown('vipPoints')}"></span>VIP Points</th>
+        <th change-arrow ng-click="sort('status')"><span ng-class="{arrow: setArrowUp('status'), arrowDown:setArrowDown('status')}"></span>Status</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="ticket in tickets | orderBy:predicate:reverse">
+      <tr class="first" toggle-row obg="ticket" ng-class="{'tr-selected': ticket.open || tickets.length == 1}">
+        <td>
+          <p>{{ticket.deliveryDate | date:'d MMM ,y'}}</p>
+        </td>
+        <td>
+          <p>{{ticket.lottery.name}}</p>
+        </td>
+        <td>
+          <p>{{ticket.id}}</p>
+        </td>
+        <td>
+          <p>{{ticket.lines.length}}</p>
+        </td>
+        <td>
+          <p>10</p>
+        </td>
+        <td>
+          <p>{{ticket.status}}
+            <a ng-hide="ticket.open"><i class="fa fa-arrow-circle-right toggleRow icon-close third-color"></i></a>
+            <a ng-show="ticket.open"><i class="fa fa-arrow-circle-down toggleRow icon-open third-color"></i></a></p>
+          </p>
+        </td>
+      </tr>
+      <tr class="info">
+        <td colspan="6">
+          <div class="row-toggle" ng-class="{'open-row-if-count-one': tickets.length == 1}">
+            <div class="wrap">
+              <div ticket-info ticket="ticket" letters="letters"></div>
+            </div>
+        </div>   <!-- blue border -->
+      </td>
+    </tr>  <!-- end tr info -->
+  </tbody>
+</table>
+<div class="row">
+  <div class="pagination">
+    <ul class="list-unstyled list-inline">
+      <li><a href=""><span class="main-color">&lt;</span> Previous</a></li>
+      <li><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">Next <span class="main-color">&gt;</span></a></li>
+    </ul>
+  </div>
+</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row" ng-if="!userService.user">
+    <div class="wrap-auth">
+        <div class="row">
+            <article>
+                <div class="head-color"></div>
+                <div class="wrap">
+                    <h3>Already a Member?
+                        <span class="main-color">Sign In Here</span>
+                    </h3>
+                    <form role="form" name="loginForm" ng-submit="loginUser()">
+                        <div ng-include="'views/auth/login.html'"></div>
+                    </form>
+                </div>
+            </article>
+            <!-- end login -->
+            <article>
+                <div class="head-color"></div>
+                <div class="wrap">
+                    <h3>Not a Member yet?
+                        <span class="main-color">Sign Up Now</span>
+                    </h3>
+                    <p>Join now and get 100% wellcome bonus</p>
+                    <form name="form.signUpForm" ng-submit="registerUser()" novalidate>
+                        <div ng-include="'views/auth/signUp.html'"></div>
+                    </form>
+                </div>
+            </article>
+            <!-- end sign up -->
+        </div>
+
+        <div class="row mt">
+            <div class="cart-promo mt" ng-repeat="promo in promos">
+            <img ng-src="{{promo.img}}" alt="" target="_blank" class="img-responsive mt">
+            </div>
+        </div>
+    </div>
+    <!-- end wrap-auth -->
+</div>

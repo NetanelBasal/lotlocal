@@ -1,0 +1,104 @@
+<div class="top-bg"></div>
+<div class="row wrap-account">
+    <main class="content-box my-account latests-results-details">
+    <div class="line-color"></div>
+    <div class="wrapper">
+        <section>
+            <header class="clearfix">
+
+                <h3 class="main-color">Play and Win the {{currentLot.name}}!</h3>
+                <p ng-bind-html="currentLot.shortDesc.txt[defaultLang]"></p>
+
+                <article class="row">
+                    <div>
+                      <h3>{{currentLot.name}} NEXT DRAW ONLINE</h3>
+                      <p class="main-color"><span ng-bind-html="lot.currency | moneyType"></span>{{lot.jackpotAmount | number:0}}</p>
+                      <div class="draw-time">
+                          <h3>Time until draw closes:</h3>
+                         <ul class="list-unstyled list-inline main-lot-time-style" timer end-time="currentLot.nextDrawTime">
+                              <li class="animated bounceIn"><div class="time-left">{{ddays}}</div><div class="type">Days</div></li>
+                              <li class="animated fadeInRight"><div class="time-left">{{hhours}}</div><div class="type">Houres</div></li>
+                              <li class="animated fadeInLeft"><div class="time-left">{{mminutes}}</div><div class="type">Minutes</div></li>
+                              <li class="animated fadeInUp"><div class="time-left">{{sseconds}}</div><div class="type">Seconds</div></li>
+                            </ul>
+                     </div>   <!-- end draw time -->
+                    </div>   <!-- end content -->
+                    <div>
+                        <img ng-src="images/lotLogos/{{lot.id}}.png" alt="{{lot.name}}">
+                    </div>  <!-- end lottery logo -->
+
+                </article>   <!-- end main lot -->
+            </header>
+
+            <div class="row btn-wrap">
+                <a class="btn primary-btn btn-block btn-main-lot" ui-sref="one-lot-play.Personal({lotName: 'Product2'})">&gt;&gt;&gt; PLAY NOW</a>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="win-nums">
+                    <h3 class="main-color">{{currentLot.name}} Winning Numbers</h3>
+                        <div>
+                              <select class="form-control" ng-change="changeNums()" ng-model="lot.date">
+                                <option ng-repeat="date in lot.dates" value="{{date}}">{{date | date:'MMM d, y'}}</option>
+                              </select>
+                        </div>
+                        <div>
+                             <ul class="list-unstyled list-inline balls">
+                                <li ng-repeat="num in byDateDetails.draw.winningNumbers.numberResults" class="change-nums-anim">
+                                  <p>{{num}}</p>
+                                </li>
+
+                                <li class="extra change-nums-anim" ng-repeat="num in byDateDetails.draw.winningNumbers.secondaryNumberResults">
+                                  <p>{{num}}</p>
+                                </li>
+                              </ul>
+                        </div>
+                </div>
+            </div>   <!-- end win nums -->
+
+            <hr>
+
+            <div class="row">
+                <div class="prize-breakdown">
+                    <h3 class="main-color">Prize Breakdown</h3>
+                    <div class="account-table">
+                        <table class="table borderless">
+                            <thead>
+                                <tr>
+                                    <th>Division</th>
+                                    <th>Match</th>
+                                    <th>Payout Per Winner</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="first" ng-repeat="row in byDateDetails.prizeBreakdown">
+                                    <td>{{row.division}}</td>
+                                    <td>{{row.match}}</td>
+                                    <td>{{row.payoutPerWinner}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+                </div>
+            </div>   <!-- end prize breakdown -->
+
+             <hr>
+
+            <div class="row">
+                <div class="last-info">
+                    
+                    <div ng-bind-html="currentLot.fullDesc.txt[defaultLang]" class="bottom-info mt"></div>
+
+                </div>
+            </div>   <!-- end last info -->
+
+        </section>   <!-- end results-->
+
+        <section>
+           
+        </section>   <!-- end promos -->
+        </div>  <!-- end wrapper -->
+    </main>
+</div>

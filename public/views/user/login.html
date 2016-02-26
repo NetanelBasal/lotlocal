@@ -1,0 +1,11 @@
+<section class="login">
+    <button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <form name="loginForm" ng-submit="loginUser()" novalidate>
+        <fieldset>
+            <legend>Sign In</legend>
+
+            <div ng-include="'views/auth/login.html'"></div>
+
+        </fieldset>
+    </form>
+</section>

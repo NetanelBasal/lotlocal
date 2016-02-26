@@ -1,0 +1,70 @@
+
+<div class="display-table">
+  <div class="table-cell lot-info">
+    <ul class="list-unstyled list-inline">
+      <li><img ng-src="img/logos/{{ticket.lottery.id}}.png" alt=""></li>
+      <li><p class="main-color head">{{ticket.lottery.name}}</p></li>
+    </ul>
+    <div>
+      <table>
+        <tr>
+          <td><p>Draw Date: </p></td>
+          <td><p>{{ticket.draw.drawTime | date:'d MMM ,y'}}</p></td>
+        </tr>
+        <tr>
+          <td><p>Jackpot:</p></td>
+          <td><p><span ng-bind-html="ticket.lottery.currency | moneyType"></span>{{ticket.draw.jackpotPrize | number:0}} {{ticket.lottery.currency}}</p></td>
+        </tr>
+        <tr>
+          <td><p>Package</p></td>
+          <td><p class="main-color">{{ticket.product.productType}}</p></td>
+        </tr>
+      </table>
+    </div>
+    </div><!-- end lot info -->
+    <div class="table-cell my-nums">
+      <p class="main-color head">My Numbers</p>
+      <ul class="list-unstyled square" ng-repeat="line in ticket.lines">
+        <li><p>{{letters[$index]}}</p></li>
+        <li ng-repeat="num in line.primaryNumbers"><p>{{num}}</p></li>
+        <li class="extra" ng-repeat="num in line.secondaryNumbers"><p>{{num}}</p></li>
+        <li><p>Win:{{line.prizeCategory.winningAmount}}&euro;</p></li>
+      </ul>
+      <div class="print">
+        <p>My Scanned Ticket</p>
+        <p><i class="fa fa-print fa-2x main-color"></i></p>
+        <p><a href="images/powerball slip.jpg" class="fancybox"><img src="images/powerball slip.jpg"></a></p>
+      </div>
+      </div><!-- end my nums -->
+      <div class="table-cell results" ng-class="{'text-center':ticket.status == 'Pending'}">
+        <p class="main-color head">Results</p>
+        <div ng-if="ticket.status != 'Pending'">
+          <ul class="list-unstyled list-inline balls">
+            <li ng-repeat="num in ticket.draw.winningNumbers.numberResults">
+              <p>{{num}}</p>
+            </li>
+            <li class="extra" ng-repeat="num in ticket.draw.winningNumbers.secondaryNumberResults">
+              <p>{{num}}</p>
+            </li>
+          </ul>
+
+          <div class="bottom-table">
+            <table>
+              <tr>
+                <td>Ticket Win:</td>
+                <td>EUR {{ticket.totalWinningAmount}}</td>
+              </tr>
+              <tr>
+                <td>My part of ticket:</td>
+                <td>1/100 <i class="fa fa-question-circle"></i></td>
+              </tr>
+              <tr>
+                <td>My part of win:</td>
+                <td>ERU {{ticket.totalWinningAmount}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <img src="images/sand.png" alt="lotteryClick" ng-if="ticket.status == 'Pending'">
+      </div> <!-- end results -->
+</div>

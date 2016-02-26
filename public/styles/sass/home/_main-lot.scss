@@ -1,0 +1,53 @@
+.main-lot {
+    background: $second-color;
+    header {
+        ul {
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+        color:$home-main-lot-color;
+        padding: 1.9em 0 3em 0;
+        @include container(1000px);
+        background: url(../../img/main-bg.png) 100% 95% no-repeat;
+        .logo {
+            @include span(2 of 12);
+        }
+        .price {
+            @include span(last 10 of 12);
+            font-size: em(20);
+            @include breakpoint($tablet) {
+                font-size: em(16);
+            }
+        }
+        .num-price {
+            font-size: em(86);
+            font-weight: bold;
+            margin-bottom: 0;
+            text-shadow: -1px -1px 0 rgba(black, 0.6), 1px -1px 0 rgba(black, 0.6), -1px 1px 0 rgba(black, 0.6), 1px 1px 0 rgba(black, 0.6), 16px 9px 5px rgba(0, 0, 0, 0.14);
+            @include breakpoint($tablet) {
+                font-size: em(70);
+            }
+        }
+        .draw-time {
+            @include span(5 of 12);
+            @include breakpoint($tablet) {
+                @include span(8 of 12);
+            }
+
+            p {
+                font-size: em(24);
+                @include breakpoint($tablet) {
+                    font-size: 1.5em;
+                }
+            }
+            .btn-block {
+                margin-top: -15px;
+                @include breakpoint($tablet) {
+                    font-size: 1.3em;
+                    @include span(6 of 12);
+                }
+            }
+
+        }
+    }
+}

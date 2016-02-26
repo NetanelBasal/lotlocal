@@ -1,0 +1,25 @@
+<div class="col-sm-8">
+    <h2>Choose your languages</h2>
+
+    <!-- <div class="form-group">
+         <div dropdown-multiselect pre-selected="langs" model="selected_items"></div>
+    </div> -->
+
+   <!--  <select multiple class="form-control" ng-model="lang" ng-options="lang.name for lang in langs track by lang.id" name="country"  ng-selected="selected">
+</select> -->
+
+  <div dropdown-multiselect ng-model="config.langs" available="langs" selected-label="Your languages" available-label="Available languages" display-attr="name"></div>
+<div class="row">
+    <div class="col-sm-6" style="margin-top:10px;">
+     <p>* Your first language will be your default language</p>
+  </div>
+</div>
+
+
+   <!--  <div class="form-group">
+        <a ng-click="saveOperatorLangs()" class="btn btn-success">Save Langs</a>
+    </div> -->
+
+
+</div>
+
